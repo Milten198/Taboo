@@ -42,7 +42,8 @@
         android:layout_below="@+id/startButton"
         android:layout_marginTop="60dp"
         android:padding="20dp"
-        android:text="SETTINGS" />
+        android:text="SETTINGS"
+        android:onClick="SettingsActivity"/>
 
     <Button
         android:id="@+id/aboutButton"
@@ -53,5 +54,6 @@
         android:layout_below="@+id/settingsButton"
         android:layout_marginTop="60dp"
         android:padding="20dp"
-        android:text="ABOUT" />
+        android:text="ABOUT"
+        android:onClick="AboutActivity"/>
 </LinearLayout>

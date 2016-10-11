@@ -1,5 +1,6 @@
 package com.projectgroup.taboo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void TeamNamesActivity(View view) {
-        Toast.makeText(this, "Dupa", Toast.LENGTH_LONG).show();
+        Intent teamNamesIntent = new Intent(this, TeamNamesActivity.class);
+        startActivity(teamNamesIntent);
+    }
+
+    public void SettingsActivity(View view) {
+        Intent settingsIntent = new Intent(this, SettingsActivity.class);
+        startActivity(settingsIntent);
+    }
+
+    public void AboutActivity(View view) {
+        Intent aboutIntent = new Intent(this, AboutActivity.class);
+        startActivity(aboutIntent);
     }
 }
