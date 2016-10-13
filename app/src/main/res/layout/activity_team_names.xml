@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:baselineAligned="false">
 
-    <TextView
+    <EditText android:id="@+id/blue_team"
+        android:hint="@string/blue_team"
+        style="@style/text_team_names"
+        />
+
+    <EditText android:id="@+id/first_player_blue"
+        style="@style/edit_text_fields"
+        />
+
+    <EditText android:id="@+id/second_player_blue"
+        style="@style/edit_text_fields"
+        />
+
+    <EditText android:id="@+id/third_player_blue"
+        style="@style/edit_text_fields"
+        />
+
+    <Button android:id="@+id/more_players_blue_team"
+        android:onClick="addMorePlayers_redTeam"
+        style="@style/buttons"
+        />
+
+    <EditText android:id="@+id/red_team"
+        android:hint="@string/red_team"
+        style="@style/text_team_names"
+        />
+
+    <EditText android:id="@+id/first_player_red"
+        style="@style/edit_text_fields"
+        />
+
+    <EditText android:id="@+id/second_player_red"
+        style="@style/edit_text_fields"
+        />
+
+    <EditText android:id="@+id/third_player_red"
+        style="@style/edit_text_fields"
+        />
+
+    <Button android:id="@+id/more_players_red_team"
+        android:onClick="addMorePlayers_redTeam"
+        style="@style/buttons"
+        />
+
+    <Button android:id="@+id/go_to_next_screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team names"
-        android:textSize="45sp"/>
-
-
-
+        android:text="@string/go_further"
+        android:onClick="goFurther"
+        />
 </LinearLayout>
