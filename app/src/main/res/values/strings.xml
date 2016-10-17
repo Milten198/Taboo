@@ -3,5 +3,6 @@
     <string name="blue_team">Niebiescy</string>
     <string name="red_team">Czerwoni</string>
     <string name="go_further">Idź dalej</string>
-    <string name="players_name">Imionisko</string>
+    <string name="players_name">Imię</string>
+    <string name="remove_player">Usuń</string>
 </resources>
