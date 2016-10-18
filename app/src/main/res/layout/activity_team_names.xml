@@ -12,19 +12,22 @@
         style="@style/text_team_names"
         />
 
-    <EditText android:id="@+id/first_player_blue"
-        style="@style/edit_text_fields"
-        />
+    <LinearLayout style="@style/layouts"
+        android:orientation="horizontal">
 
-    <Button android:id="@+id/more_players_blue_team"
-        android:onClick="addMorePlayers_blueTeam"
-        style="@style/buttons"
-        />
+        <EditText android:id="@+id/first_player_blue"
+            style="@style/edit_text_fields"
+            />
+
+        <Button android:id="@+id/more_players_blue_team"
+            android:onClick="addMorePlayers_blueTeam"
+            style="@style/buttons"
+            />
+    </LinearLayout>
 
     <LinearLayout android:id="@+id/container_blue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        style="@style/layouts">
     </LinearLayout>
 
     <EditText android:id="@+id/red_team"
@@ -32,19 +35,22 @@
         style="@style/text_team_names"
         />
 
-    <EditText android:id="@+id/first_player_red"
-        style="@style/edit_text_fields"
-        />
+    <LinearLayout style="@style/layouts"
+        android:orientation="horizontal">
 
-    <Button android:id="@+id/more_players_red_team"
-        android:onClick="addMorePlayers_redTeam"
-        style="@style/buttons"
-        />
+        <EditText android:id="@+id/first_player_red"
+            style="@style/edit_text_fields"
+            />
+
+        <Button android:id="@+id/more_players_red_team"
+            android:onClick="addMorePlayers_redTeam"
+            style="@style/buttons"
+            />
+    </LinearLayout>
 
     <LinearLayout android:id="@+id/container_red"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical"
+        style="@style/layouts"
         >
     </LinearLayout>
 
