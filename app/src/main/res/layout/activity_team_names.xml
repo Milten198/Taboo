@@ -5,11 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    >
 
-    <EditText android:id="@+id/blue_team"
+    <TextView android:id="@+id/blue_team"
         android:hint="@string/blue_team"
         style="@style/text_team_names"
+        android:background="@color/blue_team_background"
         />
 
     <LinearLayout style="@style/layouts"
@@ -30,9 +32,10 @@
         style="@style/layouts">
     </LinearLayout>
 
-    <EditText android:id="@+id/red_team"
+    <TextView android:id="@+id/red_team"
         android:hint="@string/red_team"
         style="@style/text_team_names"
+        android:background="@color/red_team_background"
         />
 
     <LinearLayout style="@style/layouts"
