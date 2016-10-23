@@ -48,6 +48,7 @@ public class TeamNamesActivity extends Activity {
         final View addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
         TextView textOut = (TextView)addView.findViewById(R.id.textout);
         textOut.setText(team.getText().toString());
+        team.setText("");
         Button buttonRemove = (Button)addView.findViewById(R.id.remove);
         buttonRemove.setOnClickListener(new View.OnClickListener() {
             @Override
