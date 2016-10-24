@@ -1,67 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1"
-    android:baselineAligned="false"
-    >
 
-    <TextView android:id="@+id/blue_team"
-        android:hint="@string/blue_team"
-        style="@style/text_team_names"
-        android:background="@color/blue_team_background"
-        />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <LinearLayout style="@style/layouts"
-        android:orientation="horizontal">
-
-        <EditText android:id="@+id/first_player_blue"
-            style="@style/edit_text_fields"
-            />
-
-        <Button android:id="@+id/more_players_blue_team"
-            android:onClick="addMorePlayers_blueTeam"
-            style="@style/buttons"
-            />
-    </LinearLayout>
-
-    <LinearLayout android:id="@+id/container_blue"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
         android:orientation="vertical"
-        style="@style/layouts">
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/blue_team"
+            style="@style/text_team_names"
+            android:background="@color/blue_team_background"
+            android:hint="@string/blue_team" />
+
+        <LinearLayout
+            style="@style/layouts"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/first_player_blue"
+                style="@style/edit_text_fields" />
+
+            <Button
+                android:id="@+id/more_players_blue_team"
+                style="@style/buttons"
+                android:onClick="addMorePlayers_blueTeam" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_blue"
+            style="@style/layouts"
+            android:orientation="vertical"></LinearLayout>
+
+        <TextView
+            android:id="@+id/red_team"
+            style="@style/text_team_names"
+            android:background="@color/red_team_background"
+            android:hint="@string/red_team" />
+
+        <LinearLayout
+            style="@style/layouts"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/first_player_red"
+                style="@style/edit_text_fields" />
+
+            <Button
+                android:id="@+id/more_players_red_team"
+                style="@style/buttons"
+                android:onClick="addMorePlayers_redTeam" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_red"
+            style="@style/layouts"
+            android:orientation="vertical"></LinearLayout>
+
+        <Button
+            android:id="@+id/go_to_next_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goFurther"
+            android:text="@string/go_further" />
+
     </LinearLayout>
-
-    <TextView android:id="@+id/red_team"
-        android:hint="@string/red_team"
-        style="@style/text_team_names"
-        android:background="@color/red_team_background"
-        />
-
-    <LinearLayout style="@style/layouts"
-        android:orientation="horizontal">
-
-        <EditText android:id="@+id/first_player_red"
-            style="@style/edit_text_fields"
-            />
-
-        <Button android:id="@+id/more_players_red_team"
-            android:onClick="addMorePlayers_redTeam"
-            style="@style/buttons"
-            />
-    </LinearLayout>
-
-    <LinearLayout android:id="@+id/container_red"
-        android:orientation="vertical"
-        style="@style/layouts"
-        >
-    </LinearLayout>
-
-    <Button android:id="@+id/go_to_next_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/go_further"
-        android:onClick="goFurther"
-        />
-
-</LinearLayout>
+</ScrollView>
