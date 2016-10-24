@@ -17,4 +17,10 @@
         android:layout_toLeftOf="@+id/remove"
         />
 
+    <TextView android:id="@+id/error_too_short_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        />
+
 </RelativeLayout>

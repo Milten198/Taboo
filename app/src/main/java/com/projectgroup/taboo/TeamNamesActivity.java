@@ -44,18 +44,26 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void addPlayers(EditText team, LinearLayout container) {
+        final View addView;
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
-        TextView textOut = (TextView)addView.findViewById(R.id.textout);
-        textOut.setText(team.getText().toString());
-        team.setText("");
-        Button buttonRemove = (Button)addView.findViewById(R.id.remove);
-        buttonRemove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((LinearLayout)addView.getParent()).removeView(addView);
-            }
-        });
+        if(team.getText().length() > 2) {
+            addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
+            TextView textOut = (TextView)addView.findViewById(R.id.textout);
+            textOut.setText(team.getText().toString());
+            team.setText("");
+            Button buttonRemove = (Button)addView.findViewById(R.id.remove);
+            buttonRemove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ((LinearLayout)addView.getParent()).removeView(addView);
+                }
+            });
+        } else {
+            addView = layoutInflater.inflate(R.layout.error_too_short_name, null);
+            TextView textView = (TextView)addView.findViewById(R.id.error_too_short_name);
+            textView.setText("Za krótkie imię");
+
+        }
         container.addView(addView);
     }
 
