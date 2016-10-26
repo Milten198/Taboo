@@ -2,6 +2,7 @@ package com.projectgroup.taboo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,17 +37,28 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void addMorePlayers_blueTeam(View view) {
-        addPlayers(namesBlueTeam, containerBlueTeam);
+        addPlayers(namesBlueTeam, containerBlueTeam, view);
     }
 
     public void addMorePlayers_redTeam(View view) {
-        addPlayers(namesRedTeam, containerRedTeam);
+        addPlayers(namesRedTeam, containerRedTeam, view);
     }
 
-    public void addPlayers(EditText team, LinearLayout container) {
+    public void addPlayers(EditText team, LinearLayout container, View view) {
         final View addView;
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        Button button_more_players = null;
         if(team.getText().length() > 2) {
+            switch(view.getId()) {
+                case R.id.more_players_blue_team:
+                    button_more_players = (Button) findViewById(R.id.more_players_blue_team);
+                    break;
+                case R.id.more_players_red_team:
+                    button_more_players = (Button) findViewById(R.id.more_players_red_team);
+                    break;
+            }
+            button_more_players.setClickable(true);
+            button_more_players.setTextColor(Color.parseColor("#ACCC88"));
             addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
             TextView textOut = (TextView)addView.findViewById(R.id.textout);
             textOut.setText(team.getText().toString());
@@ -58,13 +70,8 @@ public class TeamNamesActivity extends Activity {
                     ((LinearLayout)addView.getParent()).removeView(addView);
                 }
             });
-        } else {
-            addView = layoutInflater.inflate(R.layout.error_too_short_name, null);
-            TextView textView = (TextView)addView.findViewById(R.id.error_too_short_name);
-            textView.setText("Za krótkie imię");
-
+            container.addView(addView);
         }
-        container.addView(addView);
     }
 
     public void clearEditText_redTeam(View view) {
