@@ -1,6 +1,6 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="team_names_margins">10dp</dimen>
-    <dimen name="edit_text_and_buttons">30dp</dimen>
+    <dimen name="edit_text_and_buttons">40dp</dimen>
     <dimen name="go_further_buttons_padding">10dp</dimen>
 </resources>
