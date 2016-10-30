@@ -23,6 +23,7 @@ public class TeamNamesActivity extends Activity {
     EditText namesRedTeam;
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
+    int shortestNameLength = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class TeamNamesActivity extends Activity {
         final View addView;
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         Button button_more_players = null;
-        if(team.getText().length() > 2) {
+        if(team.getText().length() >= shortestNameLength) {
             switch(view.getId()) {
                 case R.id.more_players_blue_team:
                     button_more_players = (Button) findViewById(R.id.more_players_blue_team);

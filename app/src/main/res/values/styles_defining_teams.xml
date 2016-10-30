@@ -10,7 +10,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_margin">@dimen/team_names_margins</item>
     </style>
-    <style name="buttons" parent="@android:style/TextAppearance.Medium">
+    <style name="buttons_to_add_more_players" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/edit_text_and_buttons</item>
         <item name="android:textColor">#CCCCCC</item>
@@ -31,5 +31,15 @@
     <style name="layouts" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="buttons_to_go_further" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ee5422</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:background">#aaaaaa</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/team_names_margins</item>
+        <item name="android:padding">@dimen/go_further_buttons_padding</item>
     </style>
 </resources>

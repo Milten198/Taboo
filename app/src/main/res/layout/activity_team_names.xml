@@ -7,7 +7,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="vertical"
         android:weightSum="1">
@@ -29,7 +29,7 @@
 
             <Button
                 android:id="@+id/more_players_blue_team"
-                style="@style/buttons"
+                style="@style/buttons_to_add_more_players"
                 android:onClick="addMorePlayers_blueTeam" />
         </LinearLayout>
 
@@ -54,7 +54,7 @@
 
             <Button
                 android:id="@+id/more_players_red_team"
-                style="@style/buttons"
+                style="@style/buttons_to_add_more_players"
                 android:onClick="addMorePlayers_redTeam" />
         </LinearLayout>
 
@@ -65,10 +65,17 @@
 
         <Button
             android:id="@+id/go_to_next_screen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:onClick="goFurther"
-            android:text="@string/go_further" />
+            android:text="@string/go_further"
+            android:layout_gravity="end"
+            style="@style/buttons_to_go_further"/>
+
+        <Button
+            android:id="@+id/go_to_next_screen_without_names"
+            android:onClick="goFurtherWithoutNames"
+            android:text="@string/go_further_without_names"
+            android:layout_gravity="end"
+            style="@style/buttons_to_go_further" />
 
     </LinearLayout>
 </ScrollView>
