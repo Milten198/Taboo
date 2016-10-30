@@ -3,6 +3,7 @@ package com.projectgroup.taboo;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,8 +29,8 @@ public class TeamNamesActivity extends Activity {
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
     int shortestNameLength = 3;
-    List<String> names_blueTeam = null;
-    List<String> names_redTeam = null;
+    List<String> names_blueTeam = new ArrayList<>();
+    List<String> names_redTeam = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,13 +94,19 @@ public class TeamNamesActivity extends Activity {
 
     public void goFurther(View view) {
 
-        final Dialog dialog = new Dialog(this);
-        dialog.setTitle(names_blueTeam.toString() + " " + names_redTeam.toString());
-        dialog.show();
+        Intent teamNamesIntent = new Intent(this, StartGameActivity.class);
+        startActivity(teamNamesIntent);
 
     }
 
     public void goFurtherWithoutNames(View view) {
     }
 
+    public List<String> getNames_redTeam() {
+        return names_redTeam;
+    }
+
+    public List<String> getNames_blueTeam() {
+        return names_blueTeam;
+    }
 }
