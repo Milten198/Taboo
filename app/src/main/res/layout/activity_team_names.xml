@@ -61,6 +61,7 @@
         <LinearLayout
             android:id="@+id/container_red"
             style="@style/layouts"
+            android:layout_margin="10dp"
             android:orientation="vertical"></LinearLayout>
 
         <Button

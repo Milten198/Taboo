@@ -80,5 +80,5 @@ public class TeamNamesActivity extends Activity {
 
     public void goFurtherWithoutNames(View view) {
     }
-    
+
 }
