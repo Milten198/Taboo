@@ -1,6 +1,7 @@
 package com.projectgroup.taboo;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.List;
 
 /**
  * Created by tomasz.kubit on 2016-10-04.
@@ -24,6 +27,8 @@ public class TeamNamesActivity extends Activity {
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
     int shortestNameLength = 3;
+    List<String> names_blueTeam = null;
+    List<String> names_redTeam = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +68,15 @@ public class TeamNamesActivity extends Activity {
             addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
             TextView textOut = (TextView)addView.findViewById(R.id.textout);
             textOut.setText(team.getText().toString());
+
+            if(team.equals(namesRedTeam)) {
+                names_redTeam.add(team.getText().toString());
+            } else if(team.equals(namesBlueTeam)) {
+                names_blueTeam.add(team.getText().toString());
+            } else {
+                throw new IllegalArgumentException("There's no EditText with that id");
+            }
+
             team.setText("");
             Button buttonRemove = (Button)addView.findViewById(R.id.remove);
             buttonRemove.setOnClickListener(new View.OnClickListener() {
@@ -72,10 +86,16 @@ public class TeamNamesActivity extends Activity {
                 }
             });
             container.addView(addView);
+
         }
     }
 
     public void goFurther(View view) {
+
+        final Dialog dialog = new Dialog(this);
+        dialog.setTitle(names_blueTeam.toString() + " " + names_redTeam.toString());
+        dialog.show();
+
     }
 
     public void goFurtherWithoutNames(View view) {
