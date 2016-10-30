@@ -9,6 +9,7 @@
         <item name="android:hint">@string/players_name</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_margin">@dimen/team_names_margins</item>
+        <item name="android:padding">@dimen/field_for_names_padding</item>
     </style>
     <style name="buttons_to_add_more_players" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
