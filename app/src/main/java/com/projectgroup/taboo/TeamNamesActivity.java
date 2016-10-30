@@ -75,14 +75,10 @@ public class TeamNamesActivity extends Activity {
         }
     }
 
-    public void clearEditText_redTeam(View view) {
-        namesRedTeam.setText("");
-    }
-
-    public void clearEditText_blueTeam(View view) {
-        namesBlueTeam.setText("");
-    }
-
     public void goFurther(View view) {
     }
+
+    public void goFurtherWithoutNames(View view) {
+    }
+    
 }
