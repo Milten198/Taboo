@@ -29,8 +29,8 @@ public class TeamNamesActivity extends Activity {
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
     int shortestNameLength = 3;
-    List<String> names_blueTeam = new ArrayList<>();
-    List<String> names_redTeam = new ArrayList<>();
+    ArrayList<String> names_blueTeam = new ArrayList<>();
+    ArrayList<String> names_redTeam = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +95,8 @@ public class TeamNamesActivity extends Activity {
     public void goFurther(View view) {
 
         Intent teamNamesIntent = new Intent(this, StartGameActivity.class);
+        teamNamesIntent.putExtra("names_redTeam", names_redTeam);
+        teamNamesIntent.putExtra("names_blueTeam", names_blueTeam);
         startActivity(teamNamesIntent);
 
     }
