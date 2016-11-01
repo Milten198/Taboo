@@ -20,6 +20,6 @@ public class StartGameActivity extends AppCompatActivity {
         TextView textOut = (TextView)findViewById(R.id.textout2);
         names_redTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_redTeam");
         names_blueTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_blueTeam");
-        textOut.setText(names_redTeam + " ;;;;;; " + names_blueTeam);
+        textOut.setText("Czerwoni: " + names_redTeam + " ;;;;;; " + ", Niebiescy: " + names_blueTeam);
     }
 }

@@ -47,32 +47,27 @@ public class TeamNamesActivity extends Activity {
 
     public void addMorePlayers_blueTeam(View view) {
         button_more_players = (Button) findViewById(R.id.more_players_blue_team);
-        addPlayers(namesBlueTeam, containerBlueTeam, view);
+        addPlayers(namesBlueTeam, containerBlueTeam, names_blueTeam);
     }
 
     public void addMorePlayers_redTeam(View view) {
         button_more_players = (Button) findViewById(R.id.more_players_red_team);
-        addPlayers(namesRedTeam, containerRedTeam, view);
+        addPlayers(namesRedTeam, containerRedTeam, names_redTeam);
     }
 
-    public void addPlayers(EditText team, LinearLayout container, View view) {
+    public void addPlayers(EditText nameOfPlayer, LinearLayout container, List<String> playersNames) {
         final View addView;
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if(team.getText().length() >= shortestNameLength) {
+        if(nameOfPlayer.getText().length() >= shortestNameLength) {
 
             addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
             TextView textOut = (TextView)addView.findViewById(R.id.textout);
-            textOut.setText(team.getText().toString());
+            String currentName = nameOfPlayer.getText().toString();
+            textOut.setText(currentName);
 
-            if(team.equals(namesRedTeam)) {
-                names_redTeam.add(team.getText().toString());
-            } else if(team.equals(namesBlueTeam)) {
-                names_blueTeam.add(team.getText().toString());
-            } else {
-                throw new IllegalArgumentException("There's no EditText with that id");
-            }
+            playersNames.add(currentName);
 
-            team.setText("");
+            nameOfPlayer.setText("");
             Button buttonRemove = (Button)addView.findViewById(R.id.remove);
             buttonRemove.setOnClickListener(new View.OnClickListener() {
                 @Override
