@@ -22,6 +22,7 @@ import java.util.List;
 
 public class TeamNamesActivity extends Activity {
 
+    Button button_more_players;
     EditText namesBlueTeam;
     Button addPlayersBlueTeam;
     LinearLayout containerBlueTeam;
@@ -45,28 +46,20 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void addMorePlayers_blueTeam(View view) {
+        button_more_players = (Button) findViewById(R.id.more_players_blue_team);
         addPlayers(namesBlueTeam, containerBlueTeam, view);
     }
 
     public void addMorePlayers_redTeam(View view) {
+        button_more_players = (Button) findViewById(R.id.more_players_red_team);
         addPlayers(namesRedTeam, containerRedTeam, view);
     }
 
     public void addPlayers(EditText team, LinearLayout container, View view) {
         final View addView;
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        Button button_more_players = null;
         if(team.getText().length() >= shortestNameLength) {
-            switch(view.getId()) {
-                case R.id.more_players_blue_team:
-                    button_more_players = (Button) findViewById(R.id.more_players_blue_team);
-                    break;
-                case R.id.more_players_red_team:
-                    button_more_players = (Button) findViewById(R.id.more_players_red_team);
-                    break;
-            }
-            button_more_players.setClickable(true);
-            button_more_players.setTextColor(Color.parseColor("#ACCC88"));
+
             addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
             TextView textOut = (TextView)addView.findViewById(R.id.textout);
             textOut.setText(team.getText().toString());
