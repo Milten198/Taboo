@@ -22,6 +22,7 @@ import java.util.List;
 
 public class TeamNamesActivity extends Activity {
 
+    Button button_more_players;
     EditText namesBlueTeam;
     Button addPlayersBlueTeam;
     LinearLayout containerBlueTeam;
@@ -29,8 +30,8 @@ public class TeamNamesActivity extends Activity {
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
     int shortestNameLength = 3;
-    List<String> names_blueTeam = new ArrayList<>();
-    List<String> names_redTeam = new ArrayList<>();
+    ArrayList<String> names_blueTeam = new ArrayList<>();
+    ArrayList<String> names_redTeam = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,43 +46,27 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void addMorePlayers_blueTeam(View view) {
-        addPlayers(namesBlueTeam, containerBlueTeam, view);
+        button_more_players = (Button) findViewById(R.id.more_players_blue_team);
+        addPlayers(namesBlueTeam, containerBlueTeam, names_blueTeam);
     }
 
     public void addMorePlayers_redTeam(View view) {
-        addPlayers(namesRedTeam, containerRedTeam, view);
+        button_more_players = (Button) findViewById(R.id.more_players_red_team);
+        addPlayers(namesRedTeam, containerRedTeam, names_redTeam);
     }
 
-    public void addPlayers(EditText team, LinearLayout container, View view) {
+    public void addPlayers(EditText nameOfPlayer, LinearLayout container, List<String> playersNames) {
         final View addView;
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        Button button_more_players = null;
-        if(team.getText().length() >= shortestNameLength) {
-            switch(view.getId()) {
-                case R.id.more_players_blue_team:
-                    button_more_players = (Button) findViewById(R.id.more_players_blue_team);
-                    break;
-                case R.id.more_players_red_team:
-                    button_more_players = (Button) findViewById(R.id.more_players_red_team);
-                    break;
-            }
-            button_more_players.setClickable(true);
-            button_more_players.setTextColor(Color.parseColor("#ACCC88"));
+        if(nameOfPlayer.getText().length() >= shortestNameLength) {
+
             addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
             TextView textOut = (TextView)addView.findViewById(R.id.textout);
-            textOut.setText(team.getText().toString());
+            String currentName = nameOfPlayer.getText().toString();
+            textOut.setText(currentName);
+            playersNames.add(currentName);
 
-            if(team.equals(namesRedTeam)) {
-                names_redTeam.add(team.getText().toString());
-                names_redTeam.add("RED!!!");
-            } else if(team.equals(namesBlueTeam)) {
-                names_blueTeam.add(team.getText().toString());
-                names_blueTeam.add("BLUE????`");
-            } else {
-                throw new IllegalArgumentException("There's no EditText with that id");
-            }
-
-            team.setText("");
+            nameOfPlayer.setText("");
             Button buttonRemove = (Button)addView.findViewById(R.id.remove);
             buttonRemove.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -97,6 +82,8 @@ public class TeamNamesActivity extends Activity {
     public void goFurther(View view) {
 
         Intent teamNamesIntent = new Intent(this, StartGameActivity.class);
+        teamNamesIntent.putExtra("names_redTeam", names_redTeam);
+        teamNamesIntent.putExtra("names_blueTeam", names_blueTeam);
         startActivity(teamNamesIntent);
 
     }

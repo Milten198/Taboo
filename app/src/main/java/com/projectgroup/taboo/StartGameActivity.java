@@ -6,19 +6,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class StartGameActivity extends AppCompatActivity {
 
-    TeamNamesActivity teamNamesActivity;
+    ArrayList<String> names_redTeam;
+    ArrayList<String> names_blueTeam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_game);
-        teamNamesActivity = new TeamNamesActivity();
         TextView textOut = (TextView)findViewById(R.id.textout2);
-        Log.d("A", teamNamesActivity.getNames_blueTeam().toString());
-        Log.d("B", teamNamesActivity.getNames_redTeam().toString());
-        textOut.setText("Asasgasgassssssssssssssssssssssss");
-        textOut.setText(teamNamesActivity.getNames_blueTeam().toString() + " ;;;;;; " + teamNamesActivity.getNames_redTeam().toString());
+        names_redTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_redTeam");
+        names_blueTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_blueTeam");
+        textOut.setText("Czerwoni: " + names_redTeam + " ;;;;;; " + ", Niebiescy: " + names_blueTeam);
     }
 }
