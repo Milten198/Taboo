@@ -73,8 +73,10 @@ public class TeamNamesActivity extends Activity {
 
             if(team.equals(namesRedTeam)) {
                 names_redTeam.add(team.getText().toString());
+                names_redTeam.add("RED!!!");
             } else if(team.equals(namesBlueTeam)) {
                 names_blueTeam.add(team.getText().toString());
+                names_blueTeam.add("BLUE????`");
             } else {
                 throw new IllegalArgumentException("There's no EditText with that id");
             }
