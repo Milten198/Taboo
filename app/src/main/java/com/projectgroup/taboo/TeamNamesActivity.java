@@ -16,10 +16,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by tomasz.kubit on 2016-10-04.
- */
-
 public class TeamNamesActivity extends Activity {
 
     Button button_more_players;
@@ -55,23 +51,27 @@ public class TeamNamesActivity extends Activity {
         addPlayers(namesRedTeam, containerRedTeam, names_redTeam);
     }
 
-    public void addPlayers(EditText nameOfPlayer, LinearLayout container, List<String> playersNames) {
+    public void addPlayers(EditText nameOfPlayer, LinearLayout container,
+                           final List<String> playersNames) {
         final View addView;
-        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if(nameOfPlayer.getText().length() >= shortestNameLength) {
+        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if (nameOfPlayer.getText().length() >= shortestNameLength) {
 
-            addView = layoutInflater.inflate(R.layout.activity_to_add_more_players, null);
-            TextView textOut = (TextView)addView.findViewById(R.id.textout);
-            String currentName = nameOfPlayer.getText().toString();
+            addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
+                    null);
+            TextView textOut = (TextView) addView.findViewById(R.id.textout);
+            final String currentName = nameOfPlayer.getText().toString();
             textOut.setText(currentName);
             playersNames.add(currentName);
 
             nameOfPlayer.setText("");
-            Button buttonRemove = (Button)addView.findViewById(R.id.remove);
+            Button buttonRemove = (Button) addView.findViewById(R.id.remove);
             buttonRemove.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((LinearLayout)addView.getParent()).removeView(addView);
+                    playersNames.remove(currentName);
+                    ((LinearLayout) addView.getParent()).removeView(addView);
                 }
             });
             container.addView(addView);
