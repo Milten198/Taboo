@@ -26,16 +26,15 @@
 
             <TextView
                 android:id="@+id/blue_team_points"
-                style="@style/text_team_names"
-                android:background="@color/blue_team_background"
-                android:hint="@string/blue_team"
-                />
+                style="@style/TeamNamesActivity_text_team_names"
+                android:background="@color/TeamNamesActivity_blue_team_background"
+                android:hint="@string/blue_team" />
 
             <TextView
+                style="@style/TeamNamesActivity_text_team_names"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/text_team_names"
-                android:text="20"/>
+                android:text="20" />
 
         </LinearLayout>
 
@@ -46,18 +45,17 @@
 
             <TextView
                 android:id="@+id/red_team_points"
-                style="@style/text_team_names"
-                android:background="@color/blue_team_background"
-                android:hint="@string/blue_team"
+                style="@style/TeamNamesActivity_text_team_names"
                 android:layout_weight="5"
-                />
+                android:background="@color/TeamNamesActivity_blue_team_background"
+                android:hint="@string/blue_team" />
 
             <TextView
+                style="@style/TeamNamesActivity_text_team_names"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/text_team_names"
                 android:layout_weight="1"
-                android:text="10"/>
+                android:text="10" />
 
         </LinearLayout>
     </LinearLayout>

@@ -4,6 +4,7 @@
     <string name="red_team">Czerwoni</string>
     <string name="go_further">Idź dalej</string>
     <string name="go_further_without_names">Idź dalej bez &#10;wprowadzania imion</string>
-    <string name="players_name">Imię</string>
-    <string name="remove_player">Usuń</string>
+    <string name="TeamNamesActivity_players_name">Imię</string>
+    <string name="TeamNamesActivity_remove_player">Usuń</string>
+    <string name="TeamNamesActivity_button_to_add_players_text">Dodaj</string>
 </resources>

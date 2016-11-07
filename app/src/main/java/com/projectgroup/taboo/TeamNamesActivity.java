@@ -36,12 +36,12 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void config() {
-        namesBlueTeam = (EditText)findViewById(R.id.first_player_blue);
-        namesRedTeam = (EditText)findViewById(R.id.first_player_red);
-        addPlayersBlueTeam = (Button)findViewById(R.id.more_players_blue_team);
-        addPlayersRedTeam = (Button)findViewById(R.id.more_players_red_team);
-        containerBlueTeam = (LinearLayout)findViewById(R.id.container_blue);
-        containerRedTeam = (LinearLayout)findViewById(R.id.container_red);
+        namesBlueTeam = (EditText) findViewById(R.id.first_player_blue);
+        namesRedTeam = (EditText) findViewById(R.id.first_player_red);
+        addPlayersBlueTeam = (Button) findViewById(R.id.more_players_blue_team);
+        addPlayersRedTeam = (Button) findViewById(R.id.more_players_red_team);
+        containerBlueTeam = (LinearLayout) findViewById(R.id.container_blue);
+        containerRedTeam = (LinearLayout) findViewById(R.id.container_red);
     }
 
     public void addMorePlayers_blueTeam(View view) {
@@ -58,7 +58,7 @@ public class TeamNamesActivity extends Activity {
                            final List<String> playersNames) {
         if (nameOfPlayer.getText().length() >= shortestNameLength) {
             final String currentName = nameOfPlayer.getText().toString();
-            if(playersNames.contains(currentName)) {
+            if (playersNames.contains(currentName)) {
                 Toast.makeText(this, "To imię już istnieje. Wybierz inne", Toast.LENGTH_SHORT).show();
             } else {
                 final View addView;
@@ -95,5 +95,8 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void goFurtherWithoutNames(View view) {
+
+        Intent teamNamesIntent = new Intent(this, StartGameActivity.class);
+        startActivity(teamNamesIntent);
     }
 }

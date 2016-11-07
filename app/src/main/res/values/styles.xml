@@ -17,4 +17,53 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TeamNamesActivity_edit_text_fields" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/TeamNmesActivity_edit_text_and_buttons_height</item>
+        <item name="android:textColor">@color/TeamNamesActivity_edit_text_fields_text_color</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">@color/TeamNamesActivity_edit_text_fields_background</item>
+        <item name="android:hint">@string/TeamNamesActivity_players_name</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:padding">@dimen/TeamNmesActivity_field_for_names_padding</item>
+    </style>
+
+    <style name="TeamNamesActivity_buttons_to_add_players" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/TeamNmesActivity_edit_text_and_buttons_height</item>
+        <item name="android:textColor">@color/TeamNamesActivity_buttons_to_add_players_text_color</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:background">@color/TeamNamesActivity_buttons_to_add_players_background_color</item>
+        <item name="android:text">@string/TeamNamesActivity_button_to_add_players_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/TeamNmesActivity_edit_text_margins</item>
+    </style>
+
+    <style name="TeamNamesActivity_text_team_names" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_text_team_names_layout_height</item>
+        <item name="android:textSize">@dimen/TeamNamesActivity_text_team_names_text_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
+    </style>
+
+    <style name="TeamNamesActivity_layouts" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TeamNamesActivity_buttons_to_go_further" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/TeamNamesActivity_buttons_to_go_further_text_color</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:background">@color/TeamNamesActivity_buttons_to_go_further_background_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:padding">@dimen/TeamNmesActivity_go_further_buttons_padding</item>
+    </style>
+
 </resources>

@@ -26,7 +26,7 @@ public class StartGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_game);
-        TextView textOut = (TextView)findViewById(R.id.textout2);
+        TextView textOut = (TextView) findViewById(R.id.textout2);
         names_redTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_redTeam");
         names_blueTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_blueTeam");
 
