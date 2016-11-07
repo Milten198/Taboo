@@ -19,7 +19,8 @@ public class StartGameActivity extends AppCompatActivity {
 
     ArrayList<String> names_redTeam;
     ArrayList<String> names_blueTeam;
-    JSONObject json;
+    private int teamBluePoints = 0;
+    private int teamRedPoints = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
