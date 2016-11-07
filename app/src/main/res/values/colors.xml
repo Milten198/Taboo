@@ -6,7 +6,7 @@
     <color name="TeamNamesActivity_red_team_background">#BF1919</color>
     <color name="TeamNamesActivity_blue_team_background">#4646FF</color>
     <color name="TeamNamesActivity_edit_text_fields_text_color">#0b0b0b</color>
-    <color name="TeamNamesActivity_edit_text_fields_background">##ECECEC</color>
+    <color name="TeamNamesActivity_edit_text_fields_background">#ECECEC</color>
     <color name="TeamNamesActivity_buttons_to_add_players_text_color">#CCCCCC</color>
     <color name="TeamNamesActivity_buttons_to_add_players_background_color">#e6e6fa</color>
     <color name="TeamNamesActivity_buttons_to_go_further_text_color">#ee5422</color>
