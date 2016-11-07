@@ -21,16 +21,16 @@
             android:layout_height="wrap_content" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/blue_team_points"
-                style="@style/TeamNamesActivity_text_team_names"
-                android:background="@color/TeamNamesActivity_blue_team_background"
-                android:hint="@string/blue_team" />
+                android:id="@+id/red_team_field"
+                style="@style/StartGame_team_fields"
+                android:background="@color/TeamNamesActivity_red_team_background"
+                android:hint="@string/red_team" />
 
-            <TextView
+            <TextView android:id="@+id/red_team_points"
                 style="@style/TeamNamesActivity_text_team_names"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -40,23 +40,27 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="5">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/red_team_points"
-                style="@style/TeamNamesActivity_text_team_names"
-                android:layout_weight="5"
+                android:id="@+id/blue_team_field"
+                style="@style/StartGame_team_fields"
                 android:background="@color/TeamNamesActivity_blue_team_background"
                 android:hint="@string/blue_team" />
 
-            <TextView
+            <TextView android:id="@+id/blue_team_points"
                 style="@style/TeamNamesActivity_text_team_names"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="10" />
 
         </LinearLayout>
+
+        <TextView android:id="@+id/points_to_win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
     </LinearLayout>
 </RelativeLayout>
