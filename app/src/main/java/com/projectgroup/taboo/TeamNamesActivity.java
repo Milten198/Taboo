@@ -1,10 +1,8 @@
 package com.projectgroup.taboo;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +32,10 @@ public class TeamNamesActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_names);
+        config();
+    }
+
+    public void config() {
         namesBlueTeam = (EditText)findViewById(R.id.first_player_blue);
         namesRedTeam = (EditText)findViewById(R.id.first_player_red);
         addPlayersBlueTeam = (Button)findViewById(R.id.more_players_blue_team);
@@ -53,28 +56,31 @@ public class TeamNamesActivity extends Activity {
 
     public void addPlayers(EditText nameOfPlayer, LinearLayout container,
                            final List<String> playersNames) {
-        final View addView;
-        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (nameOfPlayer.getText().length() >= shortestNameLength) {
-
-            addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
-                    null);
-            TextView textOut = (TextView) addView.findViewById(R.id.textout);
             final String currentName = nameOfPlayer.getText().toString();
-            textOut.setText(currentName);
-            playersNames.add(currentName);
+            if(playersNames.contains(currentName)) {
+                Toast.makeText(this, "To imię już istnieje. Wybierz inne", Toast.LENGTH_SHORT).show();
+            } else {
+                final View addView;
+                LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
+                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
+                        null);
+                TextView textOut = (TextView) addView.findViewById(R.id.textout);
+                textOut.setText(currentName);
+                playersNames.add(currentName);
 
-            nameOfPlayer.setText("");
-            Button buttonRemove = (Button) addView.findViewById(R.id.remove);
-            buttonRemove.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    playersNames.remove(currentName);
-                    ((LinearLayout) addView.getParent()).removeView(addView);
-                }
-            });
-            container.addView(addView);
+                nameOfPlayer.setText("");
+                Button buttonRemove = (Button) addView.findViewById(R.id.remove);
+                buttonRemove.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        playersNames.remove(currentName);
+                        ((LinearLayout) addView.getParent()).removeView(addView);
+                    }
+                });
+                container.addView(addView);
+            }
 
         }
     }
@@ -89,13 +95,5 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void goFurtherWithoutNames(View view) {
-    }
-
-    public List<String> getNames_redTeam() {
-        return names_redTeam;
-    }
-
-    public List<String> getNames_blueTeam() {
-        return names_blueTeam;
     }
 }

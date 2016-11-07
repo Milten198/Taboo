@@ -28,31 +28,7 @@ public class StartGameActivity extends AppCompatActivity {
         TextView textOut = (TextView)findViewById(R.id.textout2);
         names_redTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_redTeam");
         names_blueTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_blueTeam");
-        try {
-            json = new JSONObject(StartGameActivity.readXMLinString("test.txt",getApplicationContext()));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         textOut.setText("Czerwoni: " + names_redTeam + " ;;;;;; " + ", Niebiescy: " + names_blueTeam);
-    }
-
-    public static String readXMLinString(String fileName, Context c) throws IOException {
-        try {
-            InputStream is = c.getAssets().open(fileName);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            String text = new String(buffer);
-
-            return text;
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
     }
 }
