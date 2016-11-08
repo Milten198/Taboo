@@ -15,35 +15,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView android:id="@+id/next_team_text"
-            style="@style/StartGame_next_player"
-            android:background="@color/StartGame_points_to_win_text_background"
-            android:text="@string/StartGame_next_team_text"
-            />
-
-        <TextView
-            android:id="@+id/next_team_to_play"
-            style="@style/StartGame_next_player"
-            android:background="@color/TeamNamesActivity_blue_team_background"
-            android:hint="@string/blue_team" />
-
-        <TextView
-            android:id="@+id/next_player_name"
-            style="@style/StartGame_next_player"
-            android:background="@color/TeamNamesActivity_blue_team_background"
-            android:hint="@string/blue_team"
-            android:layout_marginBottom="20dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
-
-        <TextView
-            android:id="@+id/textout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -55,7 +26,7 @@
                 android:hint="@string/red_team" />
 
             <TextView android:id="@+id/red_team_points"
-                style="@style/TeamNamesActivity_text_team_names"
+                style="@style/StartGame_team_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="20" />
@@ -73,13 +44,12 @@
                 android:hint="@string/blue_team" />
 
             <TextView android:id="@+id/blue_team_points"
-                style="@style/TeamNamesActivity_text_team_names"
+                style="@style/StartGame_team_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,12 +62,41 @@
                 />
 
             <TextView android:id="@+id/points_to_win_number"
-                style="@style/TeamNamesActivity_text_team_names"
+                style="@style/StartGame_team_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="50" />
+                android:text="50"
+                android:layout_marginBottom="40dp" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+        <TextView android:id="@+id/next_team_text"
+            style="@style/StartGame_next_player"
+            android:background="@color/StartGame_points_to_win_text_background"
+            android:text="@string/StartGame_next_team_text"
+            />
+
+        <TextView
+            android:id="@+id/next_team_to_play"
+            style="@style/StartGame_next_player"
+            android:background="@color/TeamNamesActivity_blue_team_background"
+            android:hint="@string/blue_team" />
+
+        <TextView
+            android:id="@+id/next_player_name"
+            style="@style/StartGame_next_player"
+            android:background="@color/TeamNamesActivity_blue_team_background"
+            android:hint="@string/blue_team"/>
+
+        <TextView
+            android:id="@+id/textout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
 
