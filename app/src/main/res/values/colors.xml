@@ -11,4 +11,5 @@
     <color name="TeamNamesActivity_buttons_to_add_players_background_color">#e6e6fa</color>
     <color name="TeamNamesActivity_buttons_to_go_further_text_color">#ee5422</color>
     <color name="TeamNamesActivity_buttons_to_go_further_background_color">#aaaaaa</color>
+    <color name="StartGame_points_to_win_text_background">#CCCCCC</color>
 </resources>

@@ -7,4 +7,6 @@
     <string name="TeamNamesActivity_players_name">Imię</string>
     <string name="TeamNamesActivity_remove_player">Usuń</string>
     <string name="TeamNamesActivity_button_to_add_players_text">Dodaj</string>
+    <string name="StartGame_points_to_win_text">Do wygrania</string>
+    <string name="StartGame_next_team_text">Teraz gra</string>
 </resources>

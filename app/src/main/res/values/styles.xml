@@ -77,4 +77,15 @@
         <item name="android:layout_weight">6</item>
     </style>
 
+    <style name="StartGame_next_player" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_text_team_names_layout_height</item>
+        <item name="android:textSize">@dimen/TeamNamesActivity_text_team_names_text_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_weight">6</item>
+    </style>
+
 </resources>

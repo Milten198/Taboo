@@ -9,6 +9,6 @@
     <dimen name="TeamNmesActivity_field_for_names_padding">10dp</dimen>
     <dimen name="TeamNamesActivity_text_team_names_layout_height">50dp</dimen>
     <dimen name="TeamNamesActivity_text_team_names_text_height">30dp</dimen>
-    <dimen name="TeamNamesActivity_text_team_names_margin_top">30dp</dimen>
+    <dimen name="TeamNamesActivity_text_team_names_margin_top">20dp</dimen>
 
 </resources>
