@@ -24,7 +24,8 @@ public class TeamNamesActivity extends Activity {
     EditText namesRedTeam;
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
-    int shortestNameLength = 3;
+    int shortestNameLength = 1;
+    String nameToShow;
     ArrayList<String> names_blueTeam = new ArrayList<>();
     ArrayList<String> names_redTeam = new ArrayList<>();
 
@@ -54,35 +55,49 @@ public class TeamNamesActivity extends Activity {
         addPlayers(namesRedTeam, containerRedTeam, names_redTeam);
     }
 
-    public void addPlayers(EditText nameOfPlayer, LinearLayout container,
+    public void addPlayers(EditText field_nameOfPlayer, LinearLayout container,
                            final List<String> playersNames) {
-        if (nameOfPlayer.getText().length() >= shortestNameLength) {
-            final String currentName = nameOfPlayer.getText().toString();
+        final View addView;
+        final String currentName = field_nameOfPlayer.getText().toString();
+        if (currentName.length() >= shortestNameLength) {
+            nameToShow = currentName;
             if (playersNames.contains(currentName)) {
-                Toast.makeText(this, "To imię już istnieje. Wybierz inne", Toast.LENGTH_SHORT).show();
-            } else {
-                final View addView;
-                LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
-                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
-                        null);
-                TextView textOut = (TextView) addView.findViewById(R.id.textout);
-                textOut.setText(currentName);
-                playersNames.add(currentName);
-
-                nameOfPlayer.setText("");
-                Button buttonRemove = (Button) addView.findViewById(R.id.remove);
-                buttonRemove.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        playersNames.remove(currentName);
-                        ((LinearLayout) addView.getParent()).removeView(addView);
-                    }
-                });
-                container.addView(addView);
+                createToast();
             }
-
+        } else if (currentName.equals("")){
+            createNameForPlayer(playersNames);
+        } else {
+            throw new IllegalArgumentException("There's something wrong with length of players name");
         }
+
+        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
+                null);
+        TextView textOut = (TextView) addView.findViewById(R.id.textout);
+        textOut.setText(nameToShow);
+        playersNames.add(nameToShow);
+
+        field_nameOfPlayer.setText("");
+        Button buttonRemove = (Button) addView.findViewById(R.id.remove);
+        buttonRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playersNames.remove(currentName);
+                ((LinearLayout) addView.getParent()).removeView(addView);
+            }
+        });
+        container.addView(addView);
+    }
+
+    public void createNameForPlayer(List<String> playersNames) {
+        int numberOfPlayersInList = playersNames.size();
+        String gamer = "Gracz " + (numberOfPlayersInList + 1);
+        nameToShow = gamer;
+    }
+
+    public void createToast() {
+        Toast.makeText(this, "To imię już istnieje. Wybierz inne", Toast.LENGTH_SHORT).show();
     }
 
     public void goFurther(View view) {
