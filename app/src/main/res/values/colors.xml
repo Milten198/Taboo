@@ -12,4 +12,6 @@
     <color name="TeamNamesActivity_buttons_to_go_further_text_color">#ee5422</color>
     <color name="TeamNamesActivity_buttons_to_go_further_background_color">#aaaaaa</color>
     <color name="StartGame_points_to_win_text_background">#CCCCCC</color>
+    <color name="TeamScores_frameColor">#4fa5d5</color>
+    <color name="TeamScores_backgroundColor">#ABABAB</color>
 </resources>

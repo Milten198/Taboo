@@ -12,5 +12,9 @@
     <dimen name="TeamNamesActivity_text_team_names_margin_top">20dp</dimen>
     <dimen name="StartGame_text_team_names_layout_height">40dp</dimen>
     <dimen name="StartGame_text_team_names_text_height">30dp</dimen>
-
+    <dimen name="TeamScores_frameWidth">1dp</dimen>
+    <dimen name="TeamScores_frameRadius">10dp</dimen>
+    <dimen name="TeamScores_textSize">25dp</dimen>
+    <dimen name="TeamScores_padding">10dp</dimen>
+    <dimen name="TeamScores_marginTop">135dp</dimen>
 </resources>

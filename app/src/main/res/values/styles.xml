@@ -113,4 +113,12 @@
         <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
     </style>
 
+    <style name="TeamScores_teamPoints" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/TeamScores_padding</item>
+        <item name="android:textSize">@dimen/TeamScores_textSize</item>
+        <item name="android:layout_marginTop">@dimen/TeamScores_marginTop</item>
+    </style>
+
 </resources>
