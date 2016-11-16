@@ -4,81 +4,23 @@
     android:id="@+id/activity_start_game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.projectgroup.taboo.StartGameActivity">
+
+    <include layout="@layout/activity_team_scores" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/red_team_field"
-                style="@style/StartGame_team_fields"
-                android:background="@color/TeamNamesActivity_red_team_background"
-                android:hint="@string/red_team" />
-
-            <TextView android:id="@+id/red_team_points"
-                style="@style/StartGame_team_points"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/blue_team_field"
-                style="@style/StartGame_team_fields"
-                android:background="@color/TeamNamesActivity_blue_team_background"
-                android:hint="@string/blue_team" />
-
-            <TextView android:id="@+id/blue_team_points"
-                style="@style/StartGame_team_points"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView android:id="@+id/points_to_win_text"
-                style="@style/StartGame_team_fields"
-                android:background="@color/StartGame_points_to_win_text_background"
-                android:text="@string/StartGame_points_to_win_text"
-                />
-
-            <TextView android:id="@+id/points_to_win_number"
-                style="@style/StartGame_team_points"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="50"
-                android:layout_marginBottom="40dp" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView android:id="@+id/next_team_text"
             style="@style/StartGame_next_player"
             android:background="@color/StartGame_points_to_win_text_background"
             android:text="@string/StartGame_next_team_text"
+            android:layout_marginTop="250dp"
             />
 
         <TextView
