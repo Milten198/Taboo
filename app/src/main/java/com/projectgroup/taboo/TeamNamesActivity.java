@@ -102,16 +102,16 @@ public class TeamNamesActivity extends Activity {
 
     public void goFurther(View view) {
 
-        Intent teamNamesIntent = new Intent(this, StartGameActivity.class);
-        teamNamesIntent.putExtra("names_redTeam", names_redTeam);
-        teamNamesIntent.putExtra("names_blueTeam", names_blueTeam);
-        startActivity(teamNamesIntent);
+        Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
+        beforeStartIntent.putExtra("names_redTeam", names_redTeam);
+        beforeStartIntent.putExtra("names_blueTeam", names_blueTeam);
+        startActivity(beforeStartIntent);
 
     }
 
     public void goFurtherWithoutNames(View view) {
 
-        Intent teamNamesIntent = new Intent(this, StartGameActivity.class);
-        startActivity(teamNamesIntent);
+        Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
+        startActivity(beforeStartIntent);
     }
 }
