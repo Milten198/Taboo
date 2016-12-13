@@ -13,18 +13,15 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+public class RecyclerViewAdapterRed extends RecyclerView.Adapter<RecyclerViewAdapterRed.ViewHolder>{
 
-    List<String> listOfNamesBlue;
     List<String> listOfNamesRed;
     Context context;
     View view1;
     ViewHolder viewHolder1;
-    TextView textView;
 
-    public RecyclerViewAdapter(Context context1, List<String> listOfNamesBlue, List<String> listOfNamesRed){
+    public RecyclerViewAdapterRed(Context context1, List<String> listOfNamesRed){
 
-        this.listOfNamesBlue = listOfNamesBlue;
         this.listOfNamesRed = listOfNamesRed;
         context = context1;
     }
@@ -42,7 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public RecyclerViewAdapterRed.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
         view1 = LayoutInflater.from(context).inflate(R.layout.recyclerview_items,parent,false);
 
@@ -54,7 +51,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
 
-        holder.textView.setText(listOfNamesBlue.get(position));
+        holder.textView.setText(listOfNamesRed.get(position));
     }
 
     @Override

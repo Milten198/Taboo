@@ -13,9 +13,11 @@ import java.util.ArrayList;
 public class BeforeStartActivity extends AppCompatActivity {
 
     Context context;
-    RecyclerView recyclerView;
-    RecyclerView.Adapter recyclerViewAdapterBlueTeam;
-    RecyclerView.LayoutManager recylerViewLayoutManager;
+    RecyclerView recyclerViewBlue;
+    RecyclerView recyclerViewRed;
+    RecyclerView.Adapter recyclerViewAdapterBlue;
+    RecyclerView.Adapter recyclerViewAdapterRed;
+    RecyclerView.LayoutManager recyclerViewLayoutManager;
     TextView scoresRedTeam;
     TextView scoresBlueTeam;
     ArrayList<String> names_redTeam;
@@ -36,14 +38,17 @@ public class BeforeStartActivity extends AppCompatActivity {
         scoresRedTeam = (TextView) findViewById(R.id.score_red_team);
         scoresBlueTeam = (TextView) findViewById(R.id.score_blue_team);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_blue);
+        recyclerViewBlue = (RecyclerView) findViewById(R.id.recycler_blue);
+        recyclerViewRed = (RecyclerView) findViewById(R.id.recycler_red);
 
-        recylerViewLayoutManager = new LinearLayoutManager(context);
+        recyclerViewLayoutManager = new LinearLayoutManager(context);
 
-        recyclerView.setLayoutManager(recylerViewLayoutManager);
+        recyclerViewBlue.setLayoutManager(recyclerViewLayoutManager);
 
-        recyclerViewAdapterBlueTeam = new RecyclerViewAdapter(context, names_blueTeam, names_redTeam);
+        recyclerViewAdapterBlue = new RecyclerViewAdapterBlue(context, names_blueTeam);
+        recyclerViewAdapterRed = new RecyclerViewAdapterBlue(context, names_redTeam);
 
-        recyclerView.setAdapter(recyclerViewAdapterBlueTeam);
+        recyclerViewBlue.setAdapter(recyclerViewAdapterBlue);
+        recyclerViewRed.setAdapter(recyclerViewAdapterRed);
     }
 }
