@@ -5,8 +5,10 @@
     android:orientation="vertical">
 
     <TextView
+        android:gravity="center"
+        android:text="dudududu"
         android:id="@+id/subject_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
