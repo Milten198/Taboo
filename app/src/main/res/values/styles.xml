@@ -17,6 +17,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+                                <!---->
+                        <!--TEAM NAMES STYLES-->
+                                <!---->
+
     <style name="TeamNamesActivity_edit_text_fields" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/TeamNmesActivity_edit_text_and_buttons_height
@@ -76,6 +80,10 @@
         <item name="android:padding">@dimen/TeamNmesActivity_go_further_buttons_padding</item>
     </style>
 
+                                    <!---->
+                            <!--START GAMES STYLES-->
+                                    <!---->
+
     <style name="StartGame_team_fields" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/StartGame_text_team_names_layout_height</item>
@@ -113,12 +121,51 @@
         <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
     </style>
 
+                                <!---->
+                        <!--TEAM SCORES STYLES-->
+                                <!---->
+
     <style name="TeamScores_teamPoints" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">@dimen/TeamScores_padding</item>
         <item name="android:textSize">@dimen/TeamScores_textSize</item>
         <item name="android:layout_marginTop">@dimen/TeamScores_marginTop</item>
+    </style>
+
+                                    <!---->
+                         <!--BEFORE START STYLES-->
+                                    <!---->
+
+    <style name="BeforeStart_teamLayouts" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">70dp</item>
+    </style>
+
+    <style name="BeforeStart_textViews" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">abc</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="BeforeStart_recyclerView" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
+    <style name="BeforeStart_mailLayout" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:orientation">horizontal</item>
     </style>
 
 </resources>
