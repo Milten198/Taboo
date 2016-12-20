@@ -6,7 +6,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        style="@style/BeforeStart_mailLayout"
+        style="@style/BeforeStart_mainLayout"
         >
 
         <LinearLayout

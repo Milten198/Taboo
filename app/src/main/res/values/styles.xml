@@ -23,21 +23,19 @@
 
     <style name="TeamNamesActivity_edit_text_fields" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/TeamNmesActivity_edit_text_and_buttons_height
-        </item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height</item>
         <item name="android:textColor">@color/TeamNamesActivity_edit_text_fields_text_color</item>
         <item name="android:typeface">monospace</item>
         <item name="android:background">@color/TeamNamesActivity_edit_text_fields_background</item>
         <item name="android:hint">@string/TeamNamesActivity_players_name</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_margin">@dimen/TeamNmesActivity_edit_text_margins</item>
-        <item name="android:padding">@dimen/TeamNmesActivity_field_for_names_padding</item>
+        <item name="android:layout_margin">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:padding">@dimen/TeamNamesActivity_field_for_names_padding</item>
     </style>
 
     <style name="TeamNamesActivity_buttons_to_add_players" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">@dimen/TeamNmesActivity_edit_text_and_buttons_height
-        </item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height</item>
         <item name="android:textColor">@color/TeamNamesActivity_buttons_to_add_players_text_color
         </item>
         <item name="android:typeface">normal</item>
@@ -46,7 +44,7 @@
         </item>
         <item name="android:text">@string/TeamNamesActivity_button_to_add_players_text</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_margin">@dimen/TeamNamesActivity_edit_text_margins</item>
     </style>
 
     <style name="TeamNamesActivity_text_team_names" parent="@android:style/TextAppearance.Medium">
@@ -57,8 +55,8 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
         </item>
-        <item name="android:layout_marginRight">@dimen/TeamNmesActivity_edit_text_margins</item>
-        <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
     </style>
 
     <style name="TeamNamesActivity_layouts" parent="@android:style/TextAppearance.Medium">
@@ -76,8 +74,8 @@
             @color/TeamNamesActivity_buttons_to_go_further_background_color
         </item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">@dimen/TeamNmesActivity_edit_text_margins</item>
-        <item name="android:padding">@dimen/TeamNmesActivity_go_further_buttons_padding</item>
+        <item name="android:layout_margin">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:padding">@dimen/TeamNamesActivity_go_further_buttons_padding</item>
     </style>
 
                                     <!---->
@@ -91,8 +89,8 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
         </item>
-        <item name="android:layout_marginRight">@dimen/TeamNmesActivity_edit_text_margins</item>
-        <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
         <item name="android:layout_weight">6</item>
     </style>
 
@@ -104,8 +102,8 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
         </item>
-        <item name="android:layout_marginRight">@dimen/TeamNmesActivity_edit_text_margins</item>
-        <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
         <item name="android:layout_weight">6</item>
     </style>
 
@@ -117,8 +115,8 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
         </item>
-        <item name="android:layout_marginRight">@dimen/TeamNmesActivity_edit_text_margins</item>
-        <item name="android:layout_marginLeft">@dimen/TeamNmesActivity_edit_text_margins</item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
     </style>
 
                                 <!---->
@@ -142,8 +140,8 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
-        <item name="android:layout_marginLeft">50dp</item>
-        <item name="android:layout_marginRight">70dp</item>
+        <item name="android:layout_marginLeft">@dimen/BS_teamLayouts_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/BS_teamLayouts_marginRight</item>
     </style>
 
     <style name="BeforeStart_textViews" parent="@android:style/TextAppearance.Medium">
@@ -151,7 +149,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:text">abc</item>
-        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginBottom">@dimen/BS_textViews_marginBottom</item>
     </style>
 
     <style name="BeforeStart_recyclerView" parent="@android:style/TextAppearance.Medium">
@@ -161,10 +159,10 @@
         <item name="android:scrollbars">vertical</item>
     </style>
 
-    <style name="BeforeStart_mailLayout" parent="@android:style/TextAppearance.Medium">
+    <style name="BeforeStart_mainLayout" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginTop">@dimen/BS_mainLayout_marginTop</item>
         <item name="android:orientation">horizontal</item>
     </style>
 
