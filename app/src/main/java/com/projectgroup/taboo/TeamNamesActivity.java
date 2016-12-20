@@ -25,6 +25,7 @@ public class TeamNamesActivity extends Activity {
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
     int shortestNameLength = 1;
+    int longestNameLength = 10;
     String nameToShow;
     ArrayList<String> names_blueTeam = new ArrayList<>();
     ArrayList<String> names_redTeam = new ArrayList<>();
@@ -59,14 +60,17 @@ public class TeamNamesActivity extends Activity {
                            final List<String> playersNames) {
         final View addView;
         final String currentName = field_nameOfPlayer.getText().toString();
-        if (currentName.length() >= shortestNameLength) {
-            nameToShow = currentName;
+        if (currentName.length() >= shortestNameLength && currentName.length() <= longestNameLength) {
+            nameToShow = currentName.replace("\n", "");
             if (playersNames.contains(currentName)) {
-                createToast();
+                createToast("To imię już istnieje. Wybierz inne");
             }
         } else if (currentName.equals("")){
             createNameForPlayer(playersNames);
-        } else {
+        } else if (currentName.length() > longestNameLength) {
+            createToast("Za długie imię");
+        }
+        else {
             throw new IllegalArgumentException("There's something wrong with length of players name");
         }
 
@@ -96,8 +100,8 @@ public class TeamNamesActivity extends Activity {
         nameToShow = gamer;
     }
 
-    public void createToast() {
-        Toast.makeText(this, "To imię już istnieje. Wybierz inne", Toast.LENGTH_SHORT).show();
+    public void createToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     public void goFurther(View view) {
