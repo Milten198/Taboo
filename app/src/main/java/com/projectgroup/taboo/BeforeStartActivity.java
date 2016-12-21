@@ -18,6 +18,7 @@ public class BeforeStartActivity extends AppCompatActivity {
     RecyclerView.Adapter recyclerViewAdapterBlue;
     RecyclerView.Adapter recyclerViewAdapterRed;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
+    RecyclerView.LayoutManager recyclerViewLayoutManager2;
     TextView scoresRedTeam;
     TextView scoresBlueTeam;
     ArrayList<String> names_redTeam;
@@ -42,11 +43,13 @@ public class BeforeStartActivity extends AppCompatActivity {
         recyclerViewRed = (RecyclerView) findViewById(R.id.recycler_red);
 
         recyclerViewLayoutManager = new LinearLayoutManager(context);
+        recyclerViewLayoutManager2 = new LinearLayoutManager(context);
 
         recyclerViewBlue.setLayoutManager(recyclerViewLayoutManager);
+        recyclerViewRed.setLayoutManager(recyclerViewLayoutManager2);
 
         recyclerViewAdapterBlue = new RecyclerViewAdapterBlue(context, names_blueTeam);
-        recyclerViewAdapterRed = new RecyclerViewAdapterBlue(context, names_redTeam);
+        recyclerViewAdapterRed = new RecyclerViewAdapterRed(context, names_redTeam);
 
         recyclerViewBlue.setAdapter(recyclerViewAdapterBlue);
         recyclerViewRed.setAdapter(recyclerViewAdapterRed);

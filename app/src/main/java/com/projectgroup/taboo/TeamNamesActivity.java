@@ -58,22 +58,29 @@ public class TeamNamesActivity extends Activity {
 
     public void addPlayers(EditText field_nameOfPlayer, LinearLayout container,
                            final List<String> playersNames) {
-        final View addView;
+
         final String currentName = field_nameOfPlayer.getText().toString();
-        if (currentName.length() >= shortestNameLength && currentName.length() <= longestNameLength) {
-            nameToShow = currentName.replace("\n", "");
-            if (playersNames.contains(currentName)) {
-                createToast("To imię już istnieje. Wybierz inne");
-            }
-        } else if (currentName.equals("")){
+        if (currentName.equals("")){
             createNameForPlayer(playersNames);
         } else if (currentName.length() > longestNameLength) {
             createToast("Za długie imię");
+            field_nameOfPlayer.setText("");
+        } else if (currentName.length() >= shortestNameLength && currentName.length() <= longestNameLength) {
+            nameToShow = currentName.replace("\n", "");
+            if (playersNames.contains(currentName)) {
+                createToast("To imię już istnieje. Wybierz inne");
+            } else {
+                addPlayersToList(field_nameOfPlayer, container, playersNames, currentName);
+            }
         }
         else {
             throw new IllegalArgumentException("There's something wrong with length of players name");
         }
+    }
 
+    public void addPlayersToList(EditText field_nameOfPlayer, LinearLayout container,
+                                 final List<String> playersNames, final String currentName) {
+        final View addView;
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
