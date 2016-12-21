@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +26,7 @@ public class TeamNamesActivity extends Activity {
     Button addPlayersRedTeam;
     LinearLayout containerRedTeam;
     int shortestNameLength = 1;
-    int longestNameLength = 10;
+    int longestNameLength = 8;
     String nameToShow;
     ArrayList<String> names_blueTeam = new ArrayList<>();
     ArrayList<String> names_redTeam = new ArrayList<>();
@@ -35,6 +36,7 @@ public class TeamNamesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_names);
         config();
+        handleHittingEnter();
     }
 
     public void config() {
@@ -60,21 +62,19 @@ public class TeamNamesActivity extends Activity {
                            final List<String> playersNames) {
 
         final String currentName = field_nameOfPlayer.getText().toString();
-        if (currentName.equals("")){
+        if (currentName.equals("")) {
             createNameForPlayer(playersNames);
         } else if (currentName.length() > longestNameLength) {
             createToast("Za długie imię");
             field_nameOfPlayer.setText("");
         } else if (currentName.length() >= shortestNameLength && currentName.length() <= longestNameLength) {
-            nameToShow = currentName.replace("\n", "");
             if (playersNames.contains(currentName)) {
                 createToast("To imię już istnieje. Wybierz inne");
             } else {
                 addPlayersToList(field_nameOfPlayer, container, playersNames, currentName);
             }
-        }
-        else {
-            throw new IllegalArgumentException("There's something wrong with length of players name");
+        } else {
+            throw new IllegalArgumentException("There's handle wrong with length of players name");
         }
     }
 
@@ -124,5 +124,35 @@ public class TeamNamesActivity extends Activity {
 
         Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
         startActivity(beforeStartIntent);
+    }
+
+    public void handleHittingEnter() {
+        namesBlueTeam.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId,
+                                          KeyEvent event) {
+                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    createToast("Enter");
+                    return true;
+                } else if (event.getKeyCode() == KeyEvent.KEYCODE_SPACE) {
+                    createToast("Bez spacji");
+                    return true;
+                }
+                return false;
+            }
+        });
+        namesRedTeam.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId,
+                                          KeyEvent event) {
+                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    return true;
+                } else if (event.getKeyCode() == KeyEvent.KEYCODE_SPACE) {
+                    createToast("Bez spacji");
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }
