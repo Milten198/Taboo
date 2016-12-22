@@ -23,35 +23,56 @@ public class BeforeStartActivity extends AppCompatActivity {
     TextView scoresBlueTeam;
     ArrayList<String> names_redTeam;
     ArrayList<String> names_blueTeam;
+    TextView View$_pointsToWin;
+    Global global;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_ACTION_BAR);
-
         setContentView(R.layout.activity_before_start);
-
         context = getApplicationContext();
 
+        getListsFromPreviousActivity();
+        init();
+        createAdapters();
+        setPointsLimitToWin();
+    }
+
+    private void getListsFromPreviousActivity() {
         names_redTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_redTeam");
         names_blueTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_blueTeam");
+    }
 
+    private void init() {
+        global = new Global();
+        View$_pointsToWin = (TextView) findViewById(R.id.value$_points_limit_to_win);
         scoresRedTeam = (TextView) findViewById(R.id.score_red_team);
         scoresBlueTeam = (TextView) findViewById(R.id.score_blue_team);
-
         recyclerViewBlue = (RecyclerView) findViewById(R.id.recycler_blue);
         recyclerViewRed = (RecyclerView) findViewById(R.id.recycler_red);
-
         recyclerViewLayoutManager = new LinearLayoutManager(context);
         recyclerViewLayoutManager2 = new LinearLayoutManager(context);
+    }
 
+    private void createAdapters() {
         recyclerViewBlue.setLayoutManager(recyclerViewLayoutManager);
         recyclerViewRed.setLayoutManager(recyclerViewLayoutManager2);
-
         recyclerViewAdapterBlue = new RecyclerViewAdapterBlue(context, names_blueTeam);
         recyclerViewAdapterRed = new RecyclerViewAdapterRed(context, names_redTeam);
-
         recyclerViewBlue.setAdapter(recyclerViewAdapterBlue);
         recyclerViewRed.setAdapter(recyclerViewAdapterRed);
+    }
+
+    private void setPointsLimitToWin() {
+
+        /*
+        Zmienna 'PointsToWinGame' ma być ustawiona w momencie kliknięcia OK
+        w Settingsach
+         */
+        global.setPointsToWinGame(124);
+        String a = String.valueOf(global.getPointsToWinGame());
+
+        View$_pointsToWin.setText(a);
     }
 }

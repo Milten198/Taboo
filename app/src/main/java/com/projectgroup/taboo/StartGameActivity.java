@@ -33,8 +33,9 @@ public class StartGameActivity extends AppCompatActivity {
         setTeamPoints();
     }
 
+    // Sets in "activity_team_scores" how many points has each team
     private void setTeamPoints() {
-        scoresBlueTeam.setText(teamBluePoints +"");
+        scoresBlueTeam.setText(teamBluePoints);
         scoresRedTeam.setText(teamRedPoints);
     }
 
