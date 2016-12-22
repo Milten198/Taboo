@@ -41,19 +41,49 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/first_player"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/blue_team_players"
+            android:id="@+id/BeforeStart_nowPlays"
             android:textAlignment="center"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Pierwszy gracz" />
+            android:hint="@string/now_plays" />
 
+        <TextView
+            android:id="@+id/BeforeStart_nowPlays2"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/now_plays" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/score_to_win"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/BeforeStart_nowPlays3"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/now_plays" />
+
+        <TextView
+            android:id="@+id/BeforeStart_nowPlays4"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/now_plays" />
     </LinearLayout>
 
 </LinearLayout>

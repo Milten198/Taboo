@@ -27,6 +27,7 @@ public class TeamNamesActivity extends Activity {
     LinearLayout containerRedTeam;
     int shortestNameLength = 1;
     int longestNameLength = 8;
+    int maxNumOfPlayers = 6;
     String nameToShow;
     ArrayList<String> names_blueTeam = new ArrayList<>();
     ArrayList<String> names_redTeam = new ArrayList<>();
@@ -61,20 +62,26 @@ public class TeamNamesActivity extends Activity {
     public void addPlayers(EditText field_nameOfPlayer, LinearLayout container,
                            final List<String> playersNames) {
 
-        final String currentName = field_nameOfPlayer.getText().toString();
-        if (currentName.equals("")) {
-            createNameForPlayer(playersNames);
-        } else if (currentName.length() > longestNameLength) {
-            createToast("Za długie imię");
-            field_nameOfPlayer.setText("");
-        } else if (currentName.length() >= shortestNameLength && currentName.length() <= longestNameLength) {
-            if (playersNames.contains(currentName)) {
-                createToast("To imię już istnieje. Wybierz inne");
+        boolean correctNumOfPlayers = checkNumPlayers(playersNames);
+
+        if (correctNumOfPlayers) {
+            final String currentName = field_nameOfPlayer.getText().toString();
+            if (currentName.equals("")) {
+                createNameForPlayer(playersNames);
+            } else if (currentName.length() > longestNameLength) {
+                createToast("Za długie imię");
+                field_nameOfPlayer.setText("");
+            } else if (currentName.length() >= shortestNameLength && currentName.length() <= longestNameLength) {
+                if (playersNames.contains(currentName)) {
+                    createToast("To imię już istnieje. Wybierz inne");
+                } else {
+                    addPlayersToList(field_nameOfPlayer, container, playersNames, currentName);
+                }
             } else {
-                addPlayersToList(field_nameOfPlayer, container, playersNames, currentName);
+                throw new IllegalArgumentException("There's handle wrong with length of players name");
             }
         } else {
-            throw new IllegalArgumentException("There's handle wrong with length of players name");
+            createToast("Za dużo graczy. Maksymalna liczba to " + maxNumOfPlayers);
         }
     }
 
@@ -86,8 +93,8 @@ public class TeamNamesActivity extends Activity {
         addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
                 null);
         TextView textOut = (TextView) addView.findViewById(R.id.textout);
-        textOut.setText(nameToShow);
-        playersNames.add(nameToShow);
+        textOut.setText(currentName);
+        playersNames.add(currentName);
 
         field_nameOfPlayer.setText("");
         Button buttonRemove = (Button) addView.findViewById(R.id.remove);
@@ -99,6 +106,17 @@ public class TeamNamesActivity extends Activity {
             }
         });
         container.addView(addView);
+    }
+
+    public boolean checkNumPlayers(List<String> numberOfPlayersInList) {
+
+        boolean correctNumOfPlayers = false;
+
+        if (numberOfPlayersInList.size() < maxNumOfPlayers) {
+            correctNumOfPlayers = true;
+        }
+
+        return correctNumOfPlayers;
     }
 
     public void createNameForPlayer(List<String> playersNames) {
@@ -134,7 +152,7 @@ public class TeamNamesActivity extends Activity {
                 if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     createToast("Enter");
                     return true;
-                } else if (event.getKeyCode() == KeyEvent.KEYCODE_SPACE) {
+                } else if (actionId == KeyEvent.KEYCODE_SPACE) {
                     createToast("Bez spacji");
                     return true;
                 }
@@ -146,8 +164,9 @@ public class TeamNamesActivity extends Activity {
             public boolean onEditorAction(TextView v, int actionId,
                                           KeyEvent event) {
                 if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    createToast("Enter");
                     return true;
-                } else if (event.getKeyCode() == KeyEvent.KEYCODE_SPACE) {
+                } else if (actionId == KeyEvent.KEYCODE_SPACE) {
                     createToast("Bez spacji");
                     return true;
                 }
