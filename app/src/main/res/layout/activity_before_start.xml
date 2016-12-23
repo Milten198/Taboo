@@ -13,7 +13,8 @@
 
             <LinearLayout style="@style/BeforeStart_teamLayouts">
 
-                <TextView style="@style/BeforeStart_textViews" />
+                <TextView style="@style/BeforeStart_textViews"
+                    android:text="Niebiescy"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_blue"
@@ -24,7 +25,8 @@
 
             <LinearLayout style="@style/BeforeStart_teamLayouts">
 
-                <TextView style="@style/BeforeStart_textViews" />
+                <TextView style="@style/BeforeStart_textViews"
+                    android:text="Czerwoni"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_red"

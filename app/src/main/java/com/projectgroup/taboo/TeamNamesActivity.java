@@ -32,7 +32,8 @@ public class TeamNamesActivity extends Activity {
     String nameToShow;
     ArrayList<String> names_blueTeam = new ArrayList<>();
     ArrayList<String> names_redTeam = new ArrayList<>();
-    String text$_goFurhther;
+    String text$_goFurhther_disabled;
+    String text$_goFurhther_enabled = "Idź dalej";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void config() {
-        text$_goFurhther = this.getString(R.string.go_further);
+        text$_goFurhther_disabled = this.getString(R.string.go_further);
         go_further = (Button) findViewById(R.id.go_further);
         namesBlueTeam = (EditText) findViewById(R.id.first_player_blue);
         namesRedTeam = (EditText) findViewById(R.id.first_player_red);
@@ -69,9 +70,10 @@ public class TeamNamesActivity extends Activity {
         boolean correctNumOfPlayers = checkNumPlayers(playersNames);
 
         if (correctNumOfPlayers) {
-            final String currentName = field_nameOfPlayer.getText().toString();
+            String currentName = field_nameOfPlayer.getText().toString();
             if (currentName.equals("")) {
-                createNameForPlayer(playersNames);
+                currentName = createNameForPlayer(playersNames);
+                addPlayersToList(field_nameOfPlayer, container, playersNames, currentName);
             } else if (currentName.length() > longestNameLength) {
                 createToast("Za długie imię");
                 field_nameOfPlayer.setText("");
@@ -126,10 +128,15 @@ public class TeamNamesActivity extends Activity {
         return correctNumOfPlayers;
     }
 
-    public void createNameForPlayer(List<String> playersNames) {
-        int numberOfPlayersInList = playersNames.size();
-        String gamer = "Gracz " + (numberOfPlayersInList + 1);
-        nameToShow = gamer;
+    public String createNameForPlayer(List<String> playersNames) {
+        int numberForPlayer = playersNames.size() + 1;
+        String gamer = "";
+
+        if(numberForPlayer == 1) {
+            gamer = "Gracz " + numberForPlayer;
+        } else
+
+        return gamer;
     }
 
     public void createToast(String message) {
@@ -180,12 +187,14 @@ public class TeamNamesActivity extends Activity {
 
     public void checkIfEnoughPlayersToGoFurther() {
         if(names_blueTeam.size() > 1 && names_redTeam.size() > 1) {
+            go_further.setAlpha(1);
             go_further.setEnabled(true);
-            go_further.setText("Idź dalej");
+            go_further.setText(text$_goFurhther_enabled);
         } else {
             go_further.setEnabled(false);
+            go_further.setAlpha(.5f);
             this.getString(R.string.go_further);
-            go_further.setText(text$_goFurhther);
+            go_further.setText(text$_goFurhther_disabled);
         }
     }
 }

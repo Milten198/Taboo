@@ -39,8 +39,8 @@
                 <!--BEFORE START DIMENS-->
                             <!---->
 
-    <dimen name="BS_teamLayouts_marginLeft">50dp</dimen>
-    <dimen name="BS_teamLayouts_marginRight">70dp</dimen>
+    <dimen name="BS_teamLayouts_marginLeft">25dp</dimen>
+    <dimen name="BS_teamLayouts_marginRight">45dp</dimen>
     <dimen name="BS_textViews_marginBottom">10dp</dimen>
     <dimen name="BS_mainLayout_marginTop">30dp</dimen>
 </resources>
