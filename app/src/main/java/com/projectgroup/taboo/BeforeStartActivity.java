@@ -12,7 +12,11 @@ import java.util.ArrayList;
 
 public class BeforeStartActivity extends AppCompatActivity {
 
+    ArrayList<String> names_redTeam;
+    ArrayList<String> names_blueTeam;
+    ArrayList<String> teamToStart;
     Context context;
+    Global global;
     RecyclerView recyclerViewBlue;
     RecyclerView recyclerViewRed;
     RecyclerView.Adapter recyclerViewAdapterBlue;
@@ -21,10 +25,8 @@ public class BeforeStartActivity extends AppCompatActivity {
     RecyclerView.LayoutManager recyclerViewLayoutManager2;
     TextView scoresRedTeam;
     TextView scoresBlueTeam;
-    ArrayList<String> names_redTeam;
-    ArrayList<String> names_blueTeam;
-    TextView View$_pointsToWin;
-    Global global;
+    TextView view$_pointsToWin;
+    TextView next_player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class BeforeStartActivity extends AppCompatActivity {
         getListsFromPreviousActivity();
         init();
         createAdapters();
+        setFirstPlayer();
         setPointsLimitToWin();
     }
 
@@ -46,7 +49,8 @@ public class BeforeStartActivity extends AppCompatActivity {
 
     private void init() {
         global = new Global();
-        View$_pointsToWin = (TextView) findViewById(R.id.value$_points_limit_to_win);
+        next_player = (TextView) findViewById(R.id.variable$_nowPlays);
+        view$_pointsToWin = (TextView) findViewById(R.id.value$_points_limit_to_win);
         scoresRedTeam = (TextView) findViewById(R.id.score_red_team);
         scoresBlueTeam = (TextView) findViewById(R.id.score_blue_team);
         recyclerViewBlue = (RecyclerView) findViewById(R.id.recycler_blue);
@@ -67,6 +71,22 @@ public class BeforeStartActivity extends AppCompatActivity {
     private void setPointsLimitToWin() {
 
         String pointsToWin = String.valueOf(global.getPointsToWinGame());
-        View$_pointsToWin.setText(pointsToWin);
+        view$_pointsToWin.setText(pointsToWin);
+    }
+
+    private void setFirstPlayer() {
+        ArrayList<String> listOfPlayers = drawTeam();
+        next_player.setText(listOfPlayers.get(0));
+    }
+
+    private ArrayList<String> drawTeam() {
+        int drawTeam = (int)(Math.random()*2);
+        if(drawTeam == 0) {
+            return names_blueTeam;
+        } else if(drawTeam == 1) {
+            return names_redTeam;
+        } else {
+            throw new IllegalArgumentException("Incorrect value of drawTeam variable");
+        }
     }
 }

@@ -65,14 +65,16 @@
             android:orientation="vertical"></LinearLayout>
 
         <Button
-            android:id="@+id/go_to_next_screen"
+            android:id="@+id/go_further"
             style="@style/TeamNamesActivity_buttons_to_go_further"
             android:layout_gravity="end"
             android:onClick="goFurther"
-            android:text="@string/go_further" />
+            android:text="@string/go_further"
+            android:enabled="false"
+            />
 
         <Button
-            android:id="@+id/go_to_next_screen_without_names"
+            android:id="@+id/go_further_without_names"
             style="@style/TeamNamesActivity_buttons_to_go_further"
             android:layout_gravity="end"
             android:onClick="goFurtherWithoutNames"

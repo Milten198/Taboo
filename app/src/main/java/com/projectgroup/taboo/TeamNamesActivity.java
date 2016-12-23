@@ -18,6 +18,7 @@ import java.util.List;
 
 public class TeamNamesActivity extends Activity {
 
+    Button go_further;
     Button button_more_players;
     EditText namesBlueTeam;
     Button addPlayersBlueTeam;
@@ -31,6 +32,7 @@ public class TeamNamesActivity extends Activity {
     String nameToShow;
     ArrayList<String> names_blueTeam = new ArrayList<>();
     ArrayList<String> names_redTeam = new ArrayList<>();
+    String text$_goFurhther;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void config() {
+        text$_goFurhther = this.getString(R.string.go_further);
+        go_further = (Button) findViewById(R.id.go_further);
         namesBlueTeam = (EditText) findViewById(R.id.first_player_blue);
         namesRedTeam = (EditText) findViewById(R.id.first_player_red);
         addPlayersBlueTeam = (Button) findViewById(R.id.more_players_blue_team);
@@ -83,6 +87,8 @@ public class TeamNamesActivity extends Activity {
         } else {
             createToast("Za dużo graczy. Maksymalna liczba to " + maxNumOfPlayers);
         }
+
+        checkIfEnoughPlayersToGoFurther();
     }
 
     public void addPlayersToList(EditText field_nameOfPlayer, LinearLayout container,
@@ -103,6 +109,7 @@ public class TeamNamesActivity extends Activity {
             public void onClick(View v) {
                 playersNames.remove(currentName);
                 ((LinearLayout) addView.getParent()).removeView(addView);
+                checkIfEnoughPlayersToGoFurther();
             }
         });
         container.addView(addView);
@@ -152,11 +159,9 @@ public class TeamNamesActivity extends Activity {
                 if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     createToast("Enter");
                     return true;
-                } else if (actionId == KeyEvent.KEYCODE_SPACE) {
-                    createToast("Bez spacji");
-                    return true;
+                } else {
+                    return false;
                 }
-                return false;
             }
         });
         namesRedTeam.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -166,12 +171,21 @@ public class TeamNamesActivity extends Activity {
                 if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     createToast("Enter");
                     return true;
-                } else if (actionId == KeyEvent.KEYCODE_SPACE) {
-                    createToast("Bez spacji");
-                    return true;
+                } else {
+                    return false;
                 }
-                return false;
             }
         });
+    }
+
+    public void checkIfEnoughPlayersToGoFurther() {
+        if(names_blueTeam.size() > 1 && names_redTeam.size() > 1) {
+            go_further.setEnabled(true);
+            go_further.setText("Idź dalej");
+        } else {
+            go_further.setEnabled(false);
+            this.getString(R.string.go_further);
+            go_further.setText(text$_goFurhther);
+        }
     }
 }
