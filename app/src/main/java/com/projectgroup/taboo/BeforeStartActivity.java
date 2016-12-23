@@ -66,13 +66,7 @@ public class BeforeStartActivity extends AppCompatActivity {
 
     private void setPointsLimitToWin() {
 
-        /*
-        Zmienna 'PointsToWinGame' ma być ustawiona w momencie kliknięcia OK
-        w Settingsach
-         */
-        global.setPointsToWinGame(124);
-        String a = String.valueOf(global.getPointsToWinGame());
-
-        View$_pointsToWin.setText(a);
+        String pointsToWin = String.valueOf(global.getPointsToWinGame());
+        View$_pointsToWin.setText(pointsToWin);
     }
 }
