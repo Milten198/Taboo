@@ -92,8 +92,17 @@
                 android:id="@+id/button$_change_players"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kliknij by zmienić gracza"
-                android:textAlignment="center" />
+                android:text="@string/click_to_change_player"
+                android:textAlignment="center"
+                android:onClick="changePlayer"/>
+
+            <Button
+                android:id="@+id/button$_change_team"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/click_to_change_team"
+                android:textAlignment="center"
+                android:onClick="changeTeam"/>
 
         </LinearLayout>
 

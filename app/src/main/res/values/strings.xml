@@ -11,4 +11,6 @@
     <string name="StartGame_next_team_text">Teraz gra</string>
     <string name="text$_now_plays">Teraz gra</string>
     <string name="score_limit">Do wygrania</string>
+    <string name="click_to_change_player">Zmień gracza</string>
+    <string name="click_to_change_team">Zmień drużynę</string>
 </resources>

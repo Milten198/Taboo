@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -38,7 +39,7 @@ public class BeforeStartActivity extends AppCompatActivity {
         getListsFromPreviousActivity();
         init();
         createAdapters();
-        setFirstPlayer();
+        setFirstPlayer(drawTeam());
         setPointsLimitToWin();
     }
 
@@ -74,19 +75,34 @@ public class BeforeStartActivity extends AppCompatActivity {
         view$_pointsToWin.setText(pointsToWin);
     }
 
-    private void setFirstPlayer() {
-        ArrayList<String> listOfPlayers = drawTeam();
-        next_player.setText(listOfPlayers.get(0));
+    private void setFirstPlayer(ArrayList<String> firstTeam) {
+        next_player.setText(firstTeam.get(0));
     }
 
     private ArrayList<String> drawTeam() {
         int drawTeam = (int)(Math.random()*2);
+        ArrayList<String> firstTeam;
         if(drawTeam == 0) {
-            return names_blueTeam;
+            firstTeam = names_blueTeam;
+            global.setFirstTeam(names_blueTeam);
+            global.setSecondTeam(names_redTeam);
         } else if(drawTeam == 1) {
-            return names_redTeam;
+            firstTeam = names_redTeam;
+            global.setFirstTeam(names_redTeam);
+            global.setSecondTeam(names_blueTeam);
         } else {
             throw new IllegalArgumentException("Incorrect value of drawTeam variable");
         }
+        return firstTeam;
+    }
+
+    public void changePlayer(View view) {
+    }
+
+    public void changeTeam(View view) {
+        ArrayList<String> temp = global.getFirstTeam();
+        global.setFirstTeam(global.getSecondTeam());
+        global.setSecondTeam(temp);
+        setFirstPlayer(global.getFirstTeam());
     }
 }
