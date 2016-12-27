@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,7 @@ public class TeamNamesActivity extends Activity {
     ArrayList<String> names_redTeam = new ArrayList<>();
     String text$_goFurhther_disabled;
     String text$_goFurhther_enabled = "Idź dalej";
+    String defaultNameForPlayers = "Gracz ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +102,7 @@ public class TeamNamesActivity extends Activity {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addView = layoutInflater.inflate(R.layout.activity_to_add_more_players,
                 null);
-        TextView textOut = (TextView) addView.findViewById(R.id.textout);
+        final TextView textOut = (TextView) addView.findViewById(R.id.textout);
         textOut.setText(currentName);
         playersNames.add(currentName);
 
@@ -111,6 +113,7 @@ public class TeamNamesActivity extends Activity {
             public void onClick(View v) {
                 playersNames.remove(currentName);
                 ((LinearLayout) addView.getParent()).removeView(addView);
+                renameNamesForDefaultPlayers(playersNames, textOut);
                 checkIfEnoughPlayersToGoFurther();
             }
         });
@@ -130,12 +133,7 @@ public class TeamNamesActivity extends Activity {
 
     public String createNameForPlayer(List<String> playersNames) {
         int numberForPlayer = playersNames.size() + 1;
-        String gamer = "";
-
-        if(numberForPlayer == 1) {
-            gamer = "Gracz " + numberForPlayer;
-        } else
-
+        String gamer = defaultNameForPlayers + numberForPlayer;
         return gamer;
     }
 
@@ -196,5 +194,19 @@ public class TeamNamesActivity extends Activity {
             this.getString(R.string.go_further);
             go_further.setText(text$_goFurhther_disabled);
         }
+    }
+
+    public void renameNamesForDefaultPlayers(List<String> listToModify, TextView viewForNames) {
+        for(int i = 0; i < listToModify.size(); i++) {
+            String name = listToModify.get(i);
+            if(name.contains(defaultNameForPlayers)) {
+                name = name.replace(name, defaultNameForPlayers + (i+1));
+                viewForNames.setText(name);
+                Log.d("Current name: ", name);
+            }
+            Log.d("Current name: ", name);
+        }
+        Log.d("Current list: ", listToModify.toString());
+        Log.d("Sth", "A");
     }
 }
