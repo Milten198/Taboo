@@ -13,4 +13,5 @@
     <string name="score_limit">Do wygrania</string>
     <string name="click_to_change_player">Zmień gracza</string>
     <string name="click_to_change_team">Zmień drużynę</string>
+    <string name="click_to_start_game">GRAJ</string>
 </resources>

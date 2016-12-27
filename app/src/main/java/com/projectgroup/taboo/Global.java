@@ -1,5 +1,8 @@
 package com.projectgroup.taboo;
 
+import android.view.View;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 /**
@@ -17,6 +20,32 @@ public class Global {
     private int pointsToWinGame = 30;
     private ArrayList<String> firstTeam;
     private ArrayList<String> secondTeam;
+
+    //---------------------------------------------------------------------------
+    //------------------------------ METHODS ------------------------------------
+    //---------------------------------------------------------------------------
+
+    public void changePlayer(View view) {
+        ArrayList<String> currentTeam = getFirstTeam();
+        String firstPlayer = currentTeam.get(0);
+        currentTeam.remove(0);
+        currentTeam.add(firstPlayer);
+        setFirstTeam(currentTeam);
+    }
+
+    public void changeTeam(View view) {
+        ArrayList<String> temp = getFirstTeam();
+        setFirstTeam(getSecondTeam());
+        setSecondTeam(temp);
+    }
+
+    public void setFirstPlayer(ArrayList<String> firstTeam, TextView next_player) {
+        next_player.setText(firstTeam.get(0));
+    }
+
+    //---------------------------------------------------------------------------
+    //------------------------ GETTERS AND SETTERS ------------------------------
+    //---------------------------------------------------------------------------
 
     public void setPointsToWinGame(int pointsToWinGame) {
         this.pointsToWinGame = pointsToWinGame;

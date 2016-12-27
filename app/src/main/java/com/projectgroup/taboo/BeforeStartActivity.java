@@ -39,7 +39,7 @@ public class BeforeStartActivity extends AppCompatActivity {
         getListsFromPreviousActivity();
         init();
         createAdapters();
-        setFirstPlayer(drawTeam());
+        global.setFirstPlayer(drawTeam(), next_player);
         setPointsLimitToWin();
     }
 
@@ -75,10 +75,6 @@ public class BeforeStartActivity extends AppCompatActivity {
         view$_pointsToWin.setText(pointsToWin);
     }
 
-    private void setFirstPlayer(ArrayList<String> firstTeam) {
-        next_player.setText(firstTeam.get(0));
-    }
-
     private ArrayList<String> drawTeam() {
         int drawTeam = (int)(Math.random()*2);
         ArrayList<String> firstTeam;
@@ -97,12 +93,15 @@ public class BeforeStartActivity extends AppCompatActivity {
     }
 
     public void changePlayer(View view) {
+        global.changePlayer(view);
+        global.setFirstPlayer(global.getFirstTeam(), next_player);
     }
 
     public void changeTeam(View view) {
-        ArrayList<String> temp = global.getFirstTeam();
-        global.setFirstTeam(global.getSecondTeam());
-        global.setSecondTeam(temp);
-        setFirstPlayer(global.getFirstTeam());
+        global.changeTeam(view);
+        global.setFirstPlayer(global.getFirstTeam(), next_player);
+    }
+
+    public void startGame(View view) {
     }
 }
