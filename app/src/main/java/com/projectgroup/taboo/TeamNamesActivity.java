@@ -48,6 +48,16 @@ public class TeamNamesActivity extends Activity {
         handleHittingEnter();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if(global.getBlueTeam().contains(string$_blueTeam)) {
+            global.getBlueTeam().remove(string$_blueTeam);
+        } if(global.getRedTeam().contains(string$_redTeam)) {
+            global.getRedTeam().remove(string$_redTeam);
+        }
+    }
+
     public void config() {
         text$_goFurhther_disabled = this.getString(R.string.go_further);
         go_further = (Button) findViewById(R.id.go_further);

@@ -81,6 +81,15 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_to_change_players"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
             <Button
                 android:id="@+id/button$_start_game"
                 android:layout_marginTop="20dp"
@@ -90,22 +99,14 @@
                 android:textAlignment="center"
                 android:onClick="startGame"/>
 
-        </LinearLayout>
-
-        <View
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"/>
-
-        <LinearLayout
-            android:id="@+id/layout_to_change_players"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
 
             <Button
                 android:id="@+id/button$_change_team"
