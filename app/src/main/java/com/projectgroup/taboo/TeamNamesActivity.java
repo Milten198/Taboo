@@ -164,6 +164,12 @@ public class TeamNamesActivity extends Activity {
 
     public void goFurtherWithoutNames(View view) {
         Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
+        if(global.getBlueTeam() != null && global.getBlueTeam().size() > 0) {
+            global.getBlueTeam().clear();
+        }
+        if(global.getRedTeam() != null && global.getRedTeam().size() > 0) {
+            global.getRedTeam().clear();
+        }
         names_redTeam.add(string$_redTeam);
         names_blueTeam.add(string$_blueTeam);
         global.setRedTeam(names_redTeam);
@@ -210,6 +216,8 @@ public class TeamNamesActivity extends Activity {
             go_further.setText(text$_goFurhther_disabled);
         }
     }
+
+
 
     public void renameNamesForDefaultPlayers(List<String> listToModify, TextView viewForNames) {
         for(int i = 0; i < listToModify.size(); i++) {
