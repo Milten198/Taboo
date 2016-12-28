@@ -96,7 +96,7 @@
 
     <style name="StartGame_next_player" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/TeamNamesActivity_text_team_names_layout_height
+        <item name="android:layout_height">wrap_content
         </item>
         <item name="android:textSize">@dimen/TeamNamesActivity_text_team_names_text_height</item>
         <item name="android:gravity">center</item>
@@ -163,6 +163,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/BS_mainLayout_marginTop</item>
         <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="BeforeStart_nowPlays" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">@string/text$_now_plays</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

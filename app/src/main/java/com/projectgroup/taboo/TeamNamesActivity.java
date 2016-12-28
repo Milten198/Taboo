@@ -19,23 +19,26 @@ import java.util.List;
 
 public class TeamNamesActivity extends Activity {
 
-    Button go_further;
-    Button button_more_players;
-    EditText namesBlueTeam;
-    Button addPlayersBlueTeam;
-    LinearLayout containerBlueTeam;
-    EditText namesRedTeam;
-    Button addPlayersRedTeam;
-    LinearLayout containerRedTeam;
-    int shortestNameLength = 1;
-    int longestNameLength = 8;
-    int maxNumOfPlayers = 6;
-    String nameToShow;
-    ArrayList<String> names_blueTeam = new ArrayList<>();
-    ArrayList<String> names_redTeam = new ArrayList<>();
-    String text$_goFurhther_disabled;
-    String text$_goFurhther_enabled = "Idź dalej";
-    String defaultNameForPlayers = "Gracz ";
+    private ArrayList<String> names_blueTeam = new ArrayList<>();
+    private ArrayList<String> names_redTeam = new ArrayList<>();
+    private Button go_further;
+    private Button button_more_players;
+    private Button addPlayersRedTeam;
+    private Button addPlayersBlueTeam;
+    private EditText namesBlueTeam;
+    private EditText namesRedTeam;
+    private Global global;
+    private LinearLayout containerBlueTeam;
+    private LinearLayout containerRedTeam;
+    private int shortestNameLength = 1;
+    private int longestNameLength = 8;
+    private int maxNumOfPlayers = 6;
+    private String nameToShow;
+    private String text$_goFurhther_disabled;
+    private String text$_goFurhther_enabled = "Idź dalej";
+    private String defaultNameForPlayers = "Gracz ";
+    private String string$_redTeam = "Czerwoni";
+    private String string$_blueTeam = "Niebiescy";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,7 @@ public class TeamNamesActivity extends Activity {
         addPlayersRedTeam = (Button) findViewById(R.id.more_players_red_team);
         containerBlueTeam = (LinearLayout) findViewById(R.id.container_blue);
         containerRedTeam = (LinearLayout) findViewById(R.id.container_red);
+        global = new Global();
     }
 
     public void addMorePlayers_blueTeam(View view) {
@@ -142,17 +146,18 @@ public class TeamNamesActivity extends Activity {
     }
 
     public void goFurther(View view) {
-
         Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
-        beforeStartIntent.putExtra("names_redTeam", names_redTeam);
-        beforeStartIntent.putExtra("names_blueTeam", names_blueTeam);
+        global.setBlueTeam(names_blueTeam);
+        global.setRedTeam(names_redTeam);
         startActivity(beforeStartIntent);
-
     }
 
     public void goFurtherWithoutNames(View view) {
-
         Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
+        names_redTeam.add(string$_redTeam);
+        names_blueTeam.add(string$_blueTeam);
+        global.setRedTeam(names_redTeam);
+        global.setBlueTeam(names_blueTeam);
         startActivity(beforeStartIntent);
     }
 

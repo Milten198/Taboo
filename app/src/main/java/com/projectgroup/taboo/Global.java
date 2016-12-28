@@ -18,8 +18,10 @@ public class Global {
     For now, default value of points to win is set to 30
     */
     private int pointsToWinGame = 30;
-    private ArrayList<String> firstTeam;
-    private ArrayList<String> secondTeam;
+    private static ArrayList<String> firstTeam;
+    private static ArrayList<String> secondTeam;
+    private static ArrayList<String> blueTeam;
+    private static ArrayList<String> redTeam;
 
     //---------------------------------------------------------------------------
     //------------------------------ METHODS ------------------------------------
@@ -69,5 +71,21 @@ public class Global {
 
     public void setSecondTeam(ArrayList<String> secondTeam) {
         this.secondTeam = secondTeam;
+    }
+
+    public void setBlueTeam(ArrayList<String> blueTeam) {
+        this.blueTeam = blueTeam;
+    }
+
+    public void setRedTeam(ArrayList<String> redTeam) {
+        this.redTeam = redTeam;
+    }
+
+    public ArrayList<String> getBlueTeam() {
+        return blueTeam;
+    }
+
+    public ArrayList<String> getRedTeam() {
+        return redTeam;
     }
 }

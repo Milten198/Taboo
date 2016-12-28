@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class BeforeStartActivity extends AppCompatActivity {
 
     ArrayList<String> names_redTeam;
     ArrayList<String> names_blueTeam;
-    ArrayList<String> teamToStart;
+    Button button$_changePlayer;
     Context context;
     Global global;
     RecyclerView recyclerViewBlue;
@@ -28,6 +29,8 @@ public class BeforeStartActivity extends AppCompatActivity {
     TextView scoresBlueTeam;
     TextView view$_pointsToWin;
     TextView next_player;
+    TextView redLabel;
+    TextView blueLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +39,16 @@ public class BeforeStartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_before_start);
         context = getApplicationContext();
 
-        getListsFromPreviousActivity();
         init();
+        setListsOfPlayers();
         createAdapters();
-        global.setFirstPlayer(drawTeam(), next_player);
+        setFirstPlayer();
         setPointsLimitToWin();
     }
 
-    private void getListsFromPreviousActivity() {
-        names_redTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_redTeam");
-        names_blueTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_blueTeam");
+    private void setListsOfPlayers() {
+        names_redTeam = global.getRedTeam();
+        names_blueTeam = global.getBlueTeam();
     }
 
     private void init() {
@@ -58,6 +61,9 @@ public class BeforeStartActivity extends AppCompatActivity {
         recyclerViewRed = (RecyclerView) findViewById(R.id.recycler_red);
         recyclerViewLayoutManager = new LinearLayoutManager(context);
         recyclerViewLayoutManager2 = new LinearLayoutManager(context);
+        button$_changePlayer = (Button) findViewById(R.id.button$_change_players);
+        redLabel = (TextView) findViewById(R.id.BeforeStart_redLabel);
+        blueLabel = (TextView) findViewById(R.id.BeforeStart_blueLabel);
     }
 
     private void createAdapters() {
@@ -100,6 +106,15 @@ public class BeforeStartActivity extends AppCompatActivity {
     public void changeTeam(View view) {
         global.changeTeam(view);
         global.setFirstPlayer(global.getFirstTeam(), next_player);
+    }
+
+    public void setFirstPlayer() {
+        if(names_redTeam.size() == 1 && names_blueTeam.size() == 1) {
+            button$_changePlayer.setVisibility(View.INVISIBLE);
+            redLabel.setVisibility(View.INVISIBLE);
+            blueLabel.setVisibility(View.INVISIBLE);
+        }
+        global.setFirstPlayer(drawTeam(), next_player);
     }
 
     public void startGame(View view) {

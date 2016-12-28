@@ -18,7 +18,7 @@
         <activity android:name=".TeamNamesActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".StartGameActivity" />
+        <activity android:name=".BeforeStartWithoutNames" />
         <activity android:name=".BeforeStartActivity"></activity>
     </application>
 

@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class StartGameActivity extends AppCompatActivity {
+public class BeforeStartWithoutNames extends AppCompatActivity {
 
     ArrayList<String> names_redTeam;
     ArrayList<String> names_blueTeam;
@@ -18,8 +18,8 @@ public class StartGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_game);
-        TextView textOut = (TextView) findViewById(R.id.textout2);
+        setContentView(R.layout.activity_before_start_without_names);
+        TextView textOut = (TextView) findViewById(R.id.textout);
         names_redTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_redTeam");
         names_blueTeam = (ArrayList<String>) getIntent().getSerializableExtra("names_blueTeam");
 
