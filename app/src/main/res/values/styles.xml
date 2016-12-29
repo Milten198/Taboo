@@ -33,4 +33,159 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
 
+                                <!---->
+                        <!--TEAM NAMES STYLES-->
+                                <!---->
+
+    <style name="TeamNamesActivity_edit_text_fields" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height</item>
+        <item name="android:textColor">@color/TeamNamesActivity_edit_text_fields_text_color</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">@color/TeamNamesActivity_edit_text_fields_background</item>
+        <item name="android:hint">@string/TeamNamesActivity_players_name</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:padding">@dimen/TeamNamesActivity_field_for_names_padding</item>
+    </style>
+
+    <style name="TeamNamesActivity_buttons_to_add_players" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height</item>
+        <item name="android:textColor">@color/TeamNamesActivity_buttons_to_add_players_text_color
+        </item>
+        <item name="android:typeface">normal</item>
+        <item name="android:background">
+            @color/TeamNamesActivity_buttons_to_add_players_background_color
+        </item>
+        <item name="android:text">@string/TeamNamesActivity_button_to_add_players_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/TeamNamesActivity_edit_text_margins</item>
+    </style>
+
+    <style name="TeamNamesActivity_text_team_names" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_text_team_names_layout_height
+        </item>
+        <item name="android:textSize">@dimen/TeamNamesActivity_text_team_names_text_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
+        </item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
+    </style>
+
+    <style name="TeamNamesActivity_layouts" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TeamNamesActivity_buttons_to_go_further" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/TeamNamesActivity_buttons_to_go_further_text_color
+        </item>
+        <item name="android:typeface">normal</item>
+        <item name="android:background">
+            @color/TeamNamesActivity_buttons_to_go_further_background_color
+        </item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:padding">@dimen/TeamNamesActivity_go_further_buttons_padding</item>
+    </style>
+
+                                    <!---->
+                            <!--START GAMES STYLES-->
+                                    <!---->
+
+    <style name="StartGame_team_fields" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/StartGame_text_team_names_layout_height</item>
+        <item name="android:textSize">@dimen/StartGame_text_team_names_text_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
+        </item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_weight">6</item>
+    </style>
+
+    <style name="StartGame_next_player" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content
+        </item>
+        <item name="android:textSize">@dimen/TeamNamesActivity_text_team_names_text_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
+        </item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_weight">6</item>
+    </style>
+
+    <style name="StartGame_team_points" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/StartGame_text_team_names_layout_height
+        </item>
+        <item name="android:textSize">@dimen/TeamNamesActivity_text_team_names_text_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/TeamNamesActivity_text_team_names_margin_top
+        </item>
+        <item name="android:layout_marginRight">@dimen/TeamNamesActivity_edit_text_margins</item>
+        <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
+    </style>
+
+                                <!---->
+                        <!--TEAM SCORES STYLES-->
+                                <!---->
+
+    <style name="TeamScores_teamPoints" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/TeamScores_padding</item>
+        <item name="android:textSize">@dimen/TeamScores_textSize</item>
+        <item name="android:layout_marginTop">@dimen/TeamScores_marginTop</item>
+    </style>
+
+                                    <!---->
+                         <!--BEFORE START STYLES-->
+                                    <!---->
+
+    <style name="BeforeStart_teamLayouts" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">@dimen/BS_teamLayouts_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/BS_teamLayouts_marginRight</item>
+    </style>
+
+    <style name="BeforeStart_textViews" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/BS_textViews_marginBottom</item>
+    </style>
+
+    <style name="BeforeStart_recyclerView" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
+    <style name="BeforeStart_mainLayout" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/BS_mainLayout_marginTop</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="BeforeStart_nowPlays" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">@string/text$_now_plays</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

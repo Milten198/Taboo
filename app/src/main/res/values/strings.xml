@@ -2,8 +2,16 @@
     <string name="app_name">Taboo</string>
     <string name="blue_team">Niebiescy</string>
     <string name="red_team">Czerwoni</string>
-    <string name="go_further">Idź dalej</string>
+    <string name="go_further">Idź dalej (min. 2 graczy w każdej drużynie)</string>
     <string name="go_further_without_names">Idź dalej bez &#10;wprowadzania imion</string>
-    <string name="players_name">Imię</string>
-    <string name="remove_player">Usuń</string>
+    <string name="TeamNamesActivity_players_name">Imię</string>
+    <string name="TeamNamesActivity_remove_player">Usuń</string>
+    <string name="TeamNamesActivity_button_to_add_players_text">Dodaj</string>
+    <string name="StartGame_points_to_win_text">Do wygrania</string>
+    <string name="StartGame_next_team_text">Teraz gra</string>
+    <string name="text$_now_plays">Teraz gra</string>
+    <string name="score_limit">Do wygrania</string>
+    <string name="click_to_change_player">Zmień gracza</string>
+    <string name="click_to_change_team">Zmień drużynę</string>
+    <string name="click_to_start_game">GRAJ</string>
 </resources>

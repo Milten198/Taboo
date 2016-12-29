@@ -3,4 +3,44 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+                            <!---->
+                <!--TEAM NAMES DIMENS-->
+                            <!---->
+
+
+    <dimen name="TeamNamesActivity_edit_text_margins">10dp</dimen>
+    <dimen name="TeamNamesActivity_edit_text_and_buttons_height">40dp</dimen>
+    <dimen name="TeamNamesActivity_go_further_buttons_padding">10dp</dimen>
+    <dimen name="TeamNamesActivity_field_for_names_padding">10dp</dimen>
+    <dimen name="TeamNamesActivity_text_team_names_layout_height">50dp</dimen>
+    <dimen name="TeamNamesActivity_text_team_names_text_height">30dp</dimen>
+    <dimen name="TeamNamesActivity_text_team_names_margin_top">20dp</dimen>
+
+                            <!---->
+                 <!--START GAME DIMENS-->
+                            <!---->
+
+
+    <dimen name="StartGame_text_team_names_layout_height">40dp</dimen>
+    <dimen name="StartGame_text_team_names_text_height">30dp</dimen>
+
+                            <!---->
+                <!--TEAM SCORES DIMENS-->
+                            <!---->
+
+    <dimen name="TeamScores_frameWidth">1dp</dimen>
+    <dimen name="TeamScores_frameRadius">10dp</dimen>
+    <dimen name="TeamScores_textSize">25dp</dimen>
+    <dimen name="TeamScores_padding">10dp</dimen>
+    <dimen name="TeamScores_marginTop">135dp</dimen>
+
+                            <!---->
+                <!--BEFORE START DIMENS-->
+                            <!---->
+
+    <dimen name="BS_teamLayouts_marginLeft">25dp</dimen>
+    <dimen name="BS_teamLayouts_marginRight">45dp</dimen>
+    <dimen name="BS_textViews_marginBottom">10dp</dimen>
+    <dimen name="BS_mainLayout_marginTop">30dp</dimen>
 </resources>
