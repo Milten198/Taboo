@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by tomaszkubit on 22.12.2016.
@@ -18,17 +19,18 @@ public class Global {
     For now, default value of points to win is set to 30
     */
     private int pointsToWinGame = 30;
-    private static ArrayList<String> firstTeam;
-    private static ArrayList<String> secondTeam;
-    private static ArrayList<String> blueTeam;
-    private static ArrayList<String> redTeam;
+    private static int maxNumOfPlayers = 6;
+    private static List<String> firstTeam;
+    private static List<String> secondTeam;
+    private static List<String> blueTeam = new ArrayList<>();
+    private static List<String> redTeam = new ArrayList<>();
 
     //---------------------------------------------------------------------------
     //------------------------------ METHODS ------------------------------------
     //---------------------------------------------------------------------------
 
     public void changePlayer(View view) {
-        ArrayList<String> currentTeam = getFirstTeam();
+        List<String> currentTeam = getFirstTeam();
         String firstPlayer = currentTeam.get(0);
         currentTeam.remove(0);
         currentTeam.add(firstPlayer);
@@ -36,13 +38,23 @@ public class Global {
     }
 
     public void changeTeam(View view) {
-        ArrayList<String> temp = getFirstTeam();
+        List<String> temp = getFirstTeam();
         setFirstTeam(getSecondTeam());
         setSecondTeam(temp);
     }
 
-    public void setFirstPlayer(ArrayList<String> firstTeam, TextView next_player) {
+    public void setFirstPlayer(List<String> firstTeam, TextView next_player) {
         next_player.setText(firstTeam.get(0));
+    }
+
+    public void copyListsToGlobal(List<String> dest, List<String> src) {
+        for(int i = 0; i < src.size(); i++) {
+            dest.add(src.get(i));
+        }
+    }
+
+    public void addValueToList(List<String> list, String value) {
+        list.add(value);
     }
 
     //---------------------------------------------------------------------------
@@ -57,35 +69,39 @@ public class Global {
         return pointsToWinGame;
     }
 
-    public ArrayList<String> getFirstTeam() {
+    public List<String> getFirstTeam() {
         return firstTeam;
     }
 
-    public void setFirstTeam(ArrayList<String> firstTeam) {
+    public void setFirstTeam(List<String> firstTeam) {
         this.firstTeam = firstTeam;
     }
 
-    public ArrayList<String> getSecondTeam() {
+    public List<String> getSecondTeam() {
         return secondTeam;
     }
 
-    public void setSecondTeam(ArrayList<String> secondTeam) {
+    public void setSecondTeam(List<String> secondTeam) {
         this.secondTeam = secondTeam;
     }
 
-    public void setBlueTeam(ArrayList<String> blueTeam) {
+    public void setBlueTeam(List<String> blueTeam) {
         this.blueTeam = blueTeam;
     }
 
-    public void setRedTeam(ArrayList<String> redTeam) {
+    public void setRedTeam(List<String> redTeam) {
         this.redTeam = redTeam;
     }
 
-    public ArrayList<String> getBlueTeam() {
+    public List<String> getBlueTeam() {
         return blueTeam;
     }
 
-    public ArrayList<String> getRedTeam() {
+    public List<String> getRedTeam() {
         return redTeam;
+    }
+
+    public int getMaxNumOfPlayers() {
+        return maxNumOfPlayers;
     }
 }

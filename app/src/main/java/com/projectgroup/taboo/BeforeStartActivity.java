@@ -10,27 +10,27 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class BeforeStartActivity extends AppCompatActivity {
 
-    ArrayList<String> names_redTeam;
-    ArrayList<String> names_blueTeam;
-    Button button$_changePlayer;
-    Context context;
-    Global global;
-    RecyclerView recyclerViewBlue;
-    RecyclerView recyclerViewRed;
-    RecyclerView.Adapter recyclerViewAdapterBlue;
-    RecyclerView.Adapter recyclerViewAdapterRed;
-    RecyclerView.LayoutManager recyclerViewLayoutManager;
-    RecyclerView.LayoutManager recyclerViewLayoutManager2;
-    TextView scoresRedTeam;
-    TextView scoresBlueTeam;
-    TextView view$_pointsToWin;
-    TextView next_player;
-    TextView redLabel;
-    TextView blueLabel;
+    private List<String> names_redTeam;
+    private List<String> names_blueTeam;
+    private  Button button$_changePlayer;
+    private Context context;
+    private Global global;
+    private RecyclerView recyclerViewBlue;
+    private RecyclerView recyclerViewRed;
+    private RecyclerView.Adapter recyclerViewAdapterBlue;
+    private RecyclerView.Adapter recyclerViewAdapterRed;
+    private RecyclerView.LayoutManager recyclerViewLayoutManager;
+    private RecyclerView.LayoutManager recyclerViewLayoutManager2;
+    private TextView scoresRedTeam;
+    private TextView scoresBlueTeam;
+    private TextView view$_pointsToWin;
+    private TextView next_player;
+    private TextView redLabel;
+    private TextView blueLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +81,9 @@ public class BeforeStartActivity extends AppCompatActivity {
         view$_pointsToWin.setText(pointsToWin);
     }
 
-    private ArrayList<String> drawTeam() {
+    private List<String> drawTeam() {
         int drawTeam = (int)(Math.random()*2);
-        ArrayList<String> firstTeam;
+        List<String> firstTeam;
         if(drawTeam == 0) {
             firstTeam = names_blueTeam;
             global.setFirstTeam(names_blueTeam);

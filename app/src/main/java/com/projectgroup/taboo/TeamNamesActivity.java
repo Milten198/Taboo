@@ -32,7 +32,6 @@ public class TeamNamesActivity extends Activity {
     private LinearLayout containerRedTeam;
     private int shortestNameLength = 1;
     private int longestNameLength = 8;
-    private int maxNumOfPlayers = 6;
     private String nameToShow;
     private String text$_goFurhther_disabled;
     private String text$_goFurhther_enabled = "Idź dalej";
@@ -103,7 +102,7 @@ public class TeamNamesActivity extends Activity {
                 throw new IllegalArgumentException("There's handle wrong with length of players name");
             }
         } else {
-            createToast("Za dużo graczy. Maksymalna liczba to " + maxNumOfPlayers);
+            createToast("Za dużo graczy. Maksymalna liczba to " + global.getMaxNumOfPlayers());
         }
 
         checkIfEnoughPlayersToGoFurther();
@@ -138,7 +137,7 @@ public class TeamNamesActivity extends Activity {
 
         boolean correctNumOfPlayers = false;
 
-        if (numberOfPlayersInList.size() < maxNumOfPlayers) {
+        if (numberOfPlayersInList.size() < global.getMaxNumOfPlayers()) {
             correctNumOfPlayers = true;
         }
 
@@ -157,23 +156,17 @@ public class TeamNamesActivity extends Activity {
 
     public void goFurther(View view) {
         Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
-        global.setBlueTeam(names_blueTeam);
-        global.setRedTeam(names_redTeam);
+        deleteLists();
+        global.copyListsToGlobal(global.getBlueTeam(), names_blueTeam);
+        global.copyListsToGlobal(global.getRedTeam(), names_redTeam);
         startActivity(beforeStartIntent);
     }
 
     public void goFurtherWithoutNames(View view) {
         Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
-        if(global.getBlueTeam() != null && global.getBlueTeam().size() > 0) {
-            global.getBlueTeam().clear();
-        }
-        if(global.getRedTeam() != null && global.getRedTeam().size() > 0) {
-            global.getRedTeam().clear();
-        }
-        names_redTeam.add(string$_redTeam);
-        names_blueTeam.add(string$_blueTeam);
-        global.setRedTeam(names_redTeam);
-        global.setBlueTeam(names_blueTeam);
+        deleteLists();
+        global.addValueToList(global.getBlueTeam(), string$_blueTeam);
+        global.addValueToList(global.getRedTeam(), string$_redTeam);
         startActivity(beforeStartIntent);
     }
 
@@ -231,5 +224,16 @@ public class TeamNamesActivity extends Activity {
         }
         Log.d("Current list: ", listToModify.toString());
         Log.d("Sth", "A");
+    }
+
+    public void deleteLists() {
+        if(global.getBlueTeam() != null && global.getBlueTeam().size() > 0) {
+            global.getBlueTeam().clear();
+            Log.d("Blue team", names_blueTeam.toString());
+        }
+        if(global.getRedTeam() != null && global.getRedTeam().size() > 0) {
+            global.getRedTeam().clear();
+            Log.d("Red team", names_redTeam.toString());
+        }
     }
 }
