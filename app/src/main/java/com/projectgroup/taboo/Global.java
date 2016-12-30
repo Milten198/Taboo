@@ -18,8 +18,11 @@ public class Global {
     The values here have to change when a user clicks OK in Settings
     For now, default value of points to win is set to 30
     */
-    private int pointsToWinGame = 30;
-    private static int maxNumOfPlayers = 6;
+    private int default$_points_to_win = 30;
+    private int default$_forbidden_words = 5;
+    private int default$_points_correct_answer = 1;
+    private int default$_points_incorrect_answer = -1;
+    private int max_num_of_players = 6;
     private static List<String> firstTeam;
     private static List<String> secondTeam;
     private static List<String> blueTeam = new ArrayList<>();
@@ -61,12 +64,12 @@ public class Global {
     //------------------------ GETTERS AND SETTERS ------------------------------
     //---------------------------------------------------------------------------
 
-    public void setPointsToWinGame(int pointsToWinGame) {
-        this.pointsToWinGame = pointsToWinGame;
+    public void setDefault$_points_to_win(int default$_points_to_win) {
+        this.default$_points_to_win = default$_points_to_win;
     }
 
-    public int getPointsToWinGame() {
-        return pointsToWinGame;
+    public int getDefault$_points_to_win() {
+        return default$_points_to_win;
     }
 
     public List<String> getFirstTeam() {
@@ -102,6 +105,38 @@ public class Global {
     }
 
     public int getMaxNumOfPlayers() {
-        return maxNumOfPlayers;
+        return max_num_of_players;
+    }
+
+    public int getDefault$_forbidden_words() {
+        return default$_forbidden_words;
+    }
+
+    public void setDefault$_forbidden_words(int default$_forbidden_words) {
+        this.default$_forbidden_words = default$_forbidden_words;
+    }
+
+    public int getMax_num_of_players() {
+        return max_num_of_players;
+    }
+
+    public void setMax_num_of_players(int max_num_of_players) {
+        this.max_num_of_players = max_num_of_players;
+    }
+
+    public int getDefault$_points_correct_answer() {
+        return default$_points_correct_answer;
+    }
+
+    public void setDefault$_points_correct_answer(int default$_points_correct_answer) {
+        this.default$_points_correct_answer = default$_points_correct_answer;
+    }
+
+    public int getDefault$_points_incorrect_answer() {
+        return default$_points_incorrect_answer;
+    }
+
+    public void setDefault$_points_incorrect_answer(int default$_points_incorrect_answer) {
+        this.default$_points_incorrect_answer = default$_points_incorrect_answer;
     }
 }

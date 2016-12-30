@@ -77,7 +77,7 @@ public class BeforeStartActivity extends AppCompatActivity {
 
     private void setPointsLimitToWin() {
 
-        String pointsToWin = String.valueOf(global.getPointsToWinGame());
+        String pointsToWin = String.valueOf(global.getDefault$_points_to_win());
         view$_pointsToWin.setText(pointsToWin);
     }
 
