@@ -99,12 +99,12 @@ public class BeforeStartActivity extends AppCompatActivity {
     }
 
     public void changePlayer(View view) {
-        global.changePlayer(view);
+        global.changePlayer();
         global.setFirstPlayer(global.getFirstTeam(), next_player);
     }
 
     public void changeTeam(View view) {
-        global.changeTeam(view);
+        global.changeTeam();
         global.setFirstPlayer(global.getFirstTeam(), next_player);
     }
 

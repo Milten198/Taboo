@@ -32,7 +32,7 @@ public class Global {
     //------------------------------ METHODS ------------------------------------
     //---------------------------------------------------------------------------
 
-    public void changePlayer(View view) {
+    public void changePlayer() {
         List<String> currentTeam = getFirstTeam();
         String firstPlayer = currentTeam.get(0);
         currentTeam.remove(0);
@@ -40,7 +40,7 @@ public class Global {
         setFirstTeam(currentTeam);
     }
 
-    public void changeTeam(View view) {
+    public void changeTeam() {
         List<String> temp = getFirstTeam();
         setFirstTeam(getSecondTeam());
         setSecondTeam(temp);

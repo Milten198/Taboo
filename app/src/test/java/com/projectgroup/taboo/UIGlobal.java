@@ -5,6 +5,10 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by y50-70 on 30.12.2016.
  */
@@ -74,4 +78,31 @@ public class UIGlobal {
         Assert.assertEquals(text_incorrect, -1, points_incorrect_answer);
     }
 
+    @Test
+    public void check_if_change_player_works() {
+        String name1 = "Kasia";
+        String name2 = "Tomek";
+        String name3 = "Kamil";
+        List<String> list_of_names = new ArrayList<>(Arrays.asList(name1, name2, name3));
+        Assert.assertEquals("Array should be null", null, global.getFirstTeam());
+        global.setFirstTeam(new ArrayList<>(Arrays.asList(name1, name2, name3)));
+        Assert.assertEquals(global.getFirstTeam(), list_of_names);
+        global.changePlayer();
+        String message = "Array should be " + name2 + ", " + name3 + ", " + name1;
+        Assert.assertEquals(message, global.getFirstTeam(), changePlayer(list_of_names));
+        global.changePlayer();
+        message = "Array should be " + name3 + ", " + name1 + ", " + name2;
+        Assert.assertEquals(message, global.getFirstTeam(), changePlayer(list_of_names));
+        global.changePlayer();
+        message = "Array should be " + name1 + ", " + name2 + ", " + name3;
+        Assert.assertEquals(message, global.getFirstTeam(), changePlayer(list_of_names));
+    }
+
+    public List<String> changePlayer(List<String> list) {
+        String name = list.get(0);
+        list.remove(0);
+        list.add(name);
+
+        return list;
+    }
 }
