@@ -33,13 +33,14 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
 
-                                <!---->
-                        <!--TEAM NAMES STYLES-->
-                                <!---->
+    <!---->
+    <!--TEAM NAMES STYLES-->
+    <!---->
 
     <style name="TeamNamesActivity_edit_text_fields" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height</item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height
+        </item>
         <item name="android:textColor">@color/TeamNamesActivity_edit_text_fields_text_color</item>
         <item name="android:typeface">monospace</item>
         <item name="android:background">@color/TeamNamesActivity_edit_text_fields_background</item>
@@ -51,7 +52,8 @@
 
     <style name="TeamNamesActivity_buttons_to_add_players" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height</item>
+        <item name="android:layout_height">@dimen/TeamNamesActivity_edit_text_and_buttons_height
+        </item>
         <item name="android:textColor">@color/TeamNamesActivity_buttons_to_add_players_text_color
         </item>
         <item name="android:typeface">normal</item>
@@ -94,9 +96,9 @@
         <item name="android:padding">@dimen/TeamNamesActivity_go_further_buttons_padding</item>
     </style>
 
-                                    <!---->
-                            <!--START GAMES STYLES-->
-                                    <!---->
+    <!---->
+    <!--START GAMES STYLES-->
+    <!---->
 
     <style name="StartGame_team_fields" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
@@ -135,9 +137,9 @@
         <item name="android:layout_marginLeft">@dimen/TeamNamesActivity_edit_text_margins</item>
     </style>
 
-                                <!---->
-                        <!--TEAM SCORES STYLES-->
-                                <!---->
+    <!---->
+    <!--TEAM SCORES STYLES-->
+    <!---->
 
     <style name="TeamScores_teamPoints" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
@@ -147,9 +149,9 @@
         <item name="android:layout_marginTop">@dimen/TeamScores_marginTop</item>
     </style>
 
-                                    <!---->
-                         <!--BEFORE START STYLES-->
-                                    <!---->
+    <!---->
+    <!--BEFORE START STYLES-->
+    <!---->
 
     <style name="BeforeStart_teamLayouts" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_weight">1</item>
@@ -188,9 +190,9 @@
         <item name="android:gravity">center</item>
     </style>
 
-                            <!---->
-                    <!--SETTINGS STYLES-->
-                            <!---->
+    <!---->
+    <!--SETTINGS STYLES-->
+    <!---->
 
     <style name="Settings_textViews" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
@@ -203,6 +205,16 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="Settings_line" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_height">3dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
     </style>
 
 </resources>
