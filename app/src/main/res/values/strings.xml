@@ -14,4 +14,15 @@
     <string name="click_to_change_player">Zmień gracza</string>
     <string name="click_to_change_team">Zmień drużynę</string>
     <string name="click_to_start_game">GRAJ</string>
+
+    <string-array name="points_to_win">
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+    </string-array>
 </resources>

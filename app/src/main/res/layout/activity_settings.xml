@@ -2,12 +2,132 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/layout$_points_to_win"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView$_points_to_win"
+            style="@style/Settings_textViews"
+            android:text="Points to win" />
+
+        <Spinner
+            android:id="@+id/spinner$_points_to_win"
+            style="@style/Settings_spinners"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout$_forbidden_words"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView$_forbidder_words"
+            style="@style/Settings_textViews"
+            android:text="Forbidden words"/>
+
+        <Spinner
+            android:id="@+id/spinner$_forbidden_words"
+            style="@style/Settings_spinners"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout$_points_correct_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView$_points_correct_answer"
+            style="@style/Settings_textViews"
+            android:text="Correct answer"/>
+
+        <Spinner
+            android:id="@+id/spinner$_points_correct_answer"
+            style="@style/Settings_spinners"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout$_points_incorrect_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView$_points_incorrect_answer"
+            style="@style/Settings_textViews"
+            android:text="Incorrect answer"/>
+
+        <Spinner
+            android:id="@+id/spinner$_points_incorrect_answer"
+            style="@style/Settings_spinners"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout$_time_per_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView$_time_per_player"
+            style="@style/Settings_textViews"
+            android:text="Time per player"/>
+
+        <Spinner
+            android:id="@+id/spinner$_time_per_player"
+            style="@style/Settings_spinners"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout$_taime_per_player"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:textSize="45sp"/>
+        android:orientation="vertical"
+        >
 
+        <TextView
+            android:id="@+id/textView$_atime_per_player"
+            style="@style/Settings_textViews"
+            android:text="Time per player"/>
+
+        <CheckBox
+            android:id="@+id/chkIos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="a" />
+
+        <CheckBox
+            android:id="@+id/chkAndroid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b"/>
+
+        <CheckBox
+            android:id="@+id/chkWindows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="c" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="v"
+        />
 </LinearLayout>
