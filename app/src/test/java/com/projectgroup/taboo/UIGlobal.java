@@ -122,6 +122,18 @@ public class UIGlobal {
         Assert.assertTrue(messageSecond, global.getSecondTeam().contains(name4));
     }
 
+    @Test
+    public void check_add_value_to_list_method() {
+        List<String> list = global.getBlueTeam();
+        String name1 = "Kasia";
+        String name2 = "Tomek";
+        global.addValueToList(list, name1);
+        global.addValueToList(list, name2);
+        String message = "List should contain names " + name1 + " and " + name2;
+        Assert.assertTrue(message, global.getBlueTeam().contains(name1));
+        Assert.assertTrue(message, global.getBlueTeam().contains(name2));
+    }
+
     public List<String> changePlayer(List<String> list) {
         String name = list.get(0);
         list.remove(0);
