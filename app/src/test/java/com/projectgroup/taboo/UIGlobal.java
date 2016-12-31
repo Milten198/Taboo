@@ -98,6 +98,30 @@ public class UIGlobal {
         Assert.assertEquals(message, global.getFirstTeam(), changePlayer(list_of_names));
     }
 
+    @Test
+    public void check_if_team_changes() {
+        String name1 = "Kasia";
+        String name2 = "Ania";
+        String name3 = "Basia";
+        String name4 = "Joasia";
+        global.setFirstTeam(new ArrayList<String>(Arrays.asList(name1, name2)));
+        global.setSecondTeam(new ArrayList<String>(Arrays.asList(name3, name4)));
+        global.changeTeam();
+        String messageFirst = "First team now contains " + name3 + " and " + name4;
+        String messageSecond = "Second team now contains " + name1 + " and " + name2;
+        Assert.assertTrue(messageFirst, global.getFirstTeam().contains(name3));
+        Assert.assertTrue(messageFirst, global.getFirstTeam().contains(name4));
+        Assert.assertTrue(messageSecond, global.getSecondTeam().contains(name1));
+        Assert.assertTrue(messageSecond, global.getSecondTeam().contains(name2));
+        global.changeTeam();
+        messageFirst = "First team now contains " + name1 + " and " + name2;
+        messageSecond = "Second team now contains " + name3 + " and " + name4;
+        Assert.assertTrue(messageFirst, global.getFirstTeam().contains(name1));
+        Assert.assertTrue(messageFirst, global.getFirstTeam().contains(name2));
+        Assert.assertTrue(messageSecond, global.getSecondTeam().contains(name3));
+        Assert.assertTrue(messageSecond, global.getSecondTeam().contains(name4));
+    }
+
     public List<String> changePlayer(List<String> list) {
         String name = list.get(0);
         list.remove(0);
