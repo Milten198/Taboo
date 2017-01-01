@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -42,6 +43,7 @@ public class BeforeStartActivity extends AppCompatActivity {
         context = getApplicationContext();
 
         init();
+        setLabels();
         setListsOfPlayers();
         createAdapters();
         setFirstPlayer();
@@ -67,6 +69,11 @@ public class BeforeStartActivity extends AppCompatActivity {
         redLabel = (TextView) findViewById(R.id.BeforeStart_redLabel);
         blueLabel = (TextView) findViewById(R.id.BeforeStart_blueLabel);
         layout$_recycler_views = (LinearLayout) findViewById(R.id.layout_with_recycler_views);
+    }
+
+    private void setLabels() {
+        redLabel.setText(global.getString$_red_team());
+        blueLabel.setText(global.getString$_blue_team());
     }
 
     private void createAdapters() {
@@ -103,21 +110,31 @@ public class BeforeStartActivity extends AppCompatActivity {
 
     public void changePlayer(View view) {
         global.changePlayer();
-        global.setFirstPlayer(global.getFirstTeam(), next_player);
+        global.setFirstPlayer_withNames(global.getFirstTeam(), next_player);
     }
 
     public void changeTeam(View view) {
         global.changeTeam();
-        global.setFirstPlayer(global.getFirstTeam(), next_player);
+        if(global.isPlay_without_names()) {
+            global.setFirstPlayer_withoutNames(next_player);
+        } else {
+            global.setFirstPlayer_withNames(global.getFirstTeam(), next_player);
+        }
     }
 
     public void setFirstPlayer() {
-        if(names_redTeam.size() == 1 && names_blueTeam.size() == 1) {
+        if(global.isPlay_without_names()) {
             button$_changePlayer.setVisibility(View.INVISIBLE);
-            redLabel.setVisibility(View.INVISIBLE);
-            blueLabel.setVisibility(View.INVISIBLE);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0, 300, 0, 0);
+            layout$_recycler_views.setLayoutParams(layoutParams);
+            global.setFirstPlayer_withoutNames(next_player);
+        } else if(global.isPlay_without_names() == false) {
+            global.setFirstPlayer_withNames(drawTeam(), next_player);
+        } else {
+            throw new IllegalArgumentException("Something went wrong");
         }
-        global.setFirstPlayer(drawTeam(), next_player);
     }
 
     public void startGame(View view) {

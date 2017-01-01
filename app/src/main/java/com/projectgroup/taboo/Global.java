@@ -1,6 +1,5 @@
 package com.projectgroup.taboo;
 
-import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,6 +17,7 @@ public class Global {
     The values here have to change when a user clicks OK in Settings
     For now, default value of points to win is set to 30
     */
+    private static boolean play_without_names;
     private int default$_points_to_win = 30;
     private int default$_forbidden_words = 5;
     private int default$_points_correct_answer = 1;
@@ -27,7 +27,10 @@ public class Global {
     private static List<String> secondTeam;
     private static List<String> blueTeam = new ArrayList<>();
     private static List<String> redTeam = new ArrayList<>();
-
+    private String string$_red_team = "Czerwoni";
+    private String string$_blue_team = "Niebiescy";
+    private String string$_first_team;
+    private String string$_second_team;
 
     //---------------------------------------------------------------------------
     //------------------------------ METHODS ------------------------------------
@@ -42,13 +45,35 @@ public class Global {
     }
 
     public void changeTeam() {
-        List<String> temp = getFirstTeam();
-        setFirstTeam(getSecondTeam());
-        setSecondTeam(temp);
+        if(play_without_names == false) {
+            List<String> temp = getFirstTeam();
+            setFirstTeam(getSecondTeam());
+            setSecondTeam(temp);
+        } else if(play_without_names) {
+            String temp = getString$_first_team();
+            setString$_first_team(string$_second_team);
+            setString$_second_team(temp);
+        }
     }
 
-    public void setFirstPlayer(List<String> firstTeam, TextView next_player) {
+    public void setFirstPlayer_withNames(List<String> firstTeam, TextView next_player) {
         next_player.setText(firstTeam.get(0));
+    }
+
+    public void setFirstPlayer_withoutNames(TextView next_player) {
+        if(getString$_first_team() == null) {
+            int draw = (int) (Math.random() * 2);
+            if (draw == 0) {
+                string$_first_team = string$_red_team;
+                string$_second_team = string$_blue_team;
+            } else if (draw == 1) {
+                string$_first_team = string$_blue_team;
+                string$_second_team = string$_red_team;
+            } else {
+                throw new IllegalArgumentException("Something went wrong");
+            }
+        }
+        next_player.setText(getString$_first_team());
     }
 
     public void copyListsToGlobal(List<String> dest, List<String> src) {
@@ -139,5 +164,37 @@ public class Global {
 
     public void setDefault$_points_incorrect_answer(int default$_points_incorrect_answer) {
         this.default$_points_incorrect_answer = default$_points_incorrect_answer;
+    }
+
+    public static boolean isPlay_without_names() {
+        return play_without_names;
+    }
+
+    public static void setPlay_without_names(boolean play_without_names) {
+        Global.play_without_names = play_without_names;
+    }
+
+    public String getString$_red_team() {
+        return string$_red_team;
+    }
+
+    public String getString$_blue_team() {
+        return string$_blue_team;
+    }
+
+    public String getString$_first_team() {
+        return string$_first_team;
+    }
+
+    public void setString$_first_team(String string$_first_team) {
+        this.string$_first_team = string$_first_team;
+    }
+
+    public String getString$_second_team() {
+        return string$_second_team;
+    }
+
+    public void setString$_second_team(String string$_second_team) {
+        this.string$_second_team = string$_second_team;
     }
 }
