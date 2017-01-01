@@ -16,6 +16,10 @@ import java.util.List;
 public class UIGlobal {
 
     private Global global;
+    private String name1 = "Kasia";
+    private String name2 = "Ania";
+    private String name3 = "Basia";
+    private String name4 = "Joasia";
 
     @Before
     public void setUp() {
@@ -80,9 +84,6 @@ public class UIGlobal {
 
     @Test
     public void check_if_change_player_works() {
-        String name1 = "Kasia";
-        String name2 = "Tomek";
-        String name3 = "Kamil";
         List<String> list_of_names = new ArrayList<>(Arrays.asList(name1, name2, name3));
         Assert.assertEquals("Array should be null", null, global.getFirstTeam());
         global.setFirstTeam(new ArrayList<>(Arrays.asList(name1, name2, name3)));
@@ -100,10 +101,6 @@ public class UIGlobal {
 
     @Test
     public void check_if_team_changes() {
-        String name1 = "Kasia";
-        String name2 = "Ania";
-        String name3 = "Basia";
-        String name4 = "Joasia";
         global.setFirstTeam(new ArrayList<String>(Arrays.asList(name1, name2)));
         global.setSecondTeam(new ArrayList<String>(Arrays.asList(name3, name4)));
         global.changeTeam();
@@ -125,13 +122,22 @@ public class UIGlobal {
     @Test
     public void check_add_value_to_list_method() {
         List<String> list = global.getBlueTeam();
-        String name1 = "Kasia";
-        String name2 = "Tomek";
         global.addValueToList(list, name1);
         global.addValueToList(list, name2);
         String message = "List should contain names " + name1 + " and " + name2;
         Assert.assertTrue(message, global.getBlueTeam().contains(name1));
         Assert.assertTrue(message, global.getBlueTeam().contains(name2));
+    }
+
+    @Test
+    public void check_copy_list_to_another_list() {
+        List<String> first_list = new ArrayList<>(Arrays.asList(name1, name2, name3));
+        List<String> second_list = new ArrayList<>();
+        global.copyListsToGlobal(second_list, first_list);
+        String message = "Both list should contain " + name1 + ", " + name2 + " and " + name3;
+        for(int i = 0; i < second_list.size(); i++) {
+            Assert.assertEquals(message, second_list.get(i), first_list.get(i));
+        }
     }
 
     public List<String> changePlayer(List<String> list) {
