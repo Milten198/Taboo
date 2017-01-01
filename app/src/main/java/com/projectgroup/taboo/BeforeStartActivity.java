@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -16,9 +17,10 @@ public class BeforeStartActivity extends AppCompatActivity {
 
     private List<String> names_redTeam;
     private List<String> names_blueTeam;
-    private  Button button$_changePlayer;
+    private Button button$_changePlayer;
     private Context context;
     private Global global;
+    private LinearLayout layout$_recycler_views;
     private RecyclerView recyclerViewBlue;
     private RecyclerView recyclerViewRed;
     private RecyclerView.Adapter recyclerViewAdapterBlue;
@@ -64,6 +66,7 @@ public class BeforeStartActivity extends AppCompatActivity {
         button$_changePlayer = (Button) findViewById(R.id.button$_change_players);
         redLabel = (TextView) findViewById(R.id.BeforeStart_redLabel);
         blueLabel = (TextView) findViewById(R.id.BeforeStart_blueLabel);
+        layout$_recycler_views = (LinearLayout) findViewById(R.id.layout_with_recycler_views);
     }
 
     private void createAdapters() {

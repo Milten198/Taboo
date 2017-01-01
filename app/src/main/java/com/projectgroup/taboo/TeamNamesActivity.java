@@ -44,7 +44,8 @@ public class TeamNamesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_names);
         config();
-        handleHittingEnter();
+        handleHittingEnter(namesBlueTeam);
+        handleHittingEnter(namesRedTeam);
     }
 
     @Override
@@ -170,20 +171,8 @@ public class TeamNamesActivity extends Activity {
         startActivity(beforeStartIntent);
     }
 
-    public void handleHittingEnter() {
-        namesBlueTeam.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId,
-                                          KeyEvent event) {
-                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                    createToast("Enter");
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        });
-        namesRedTeam.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+    public void handleHittingEnter(EditText editText) {
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId,
                                           KeyEvent event) {
