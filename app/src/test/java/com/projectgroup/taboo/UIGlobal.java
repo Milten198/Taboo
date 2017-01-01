@@ -140,6 +140,28 @@ public class UIGlobal {
         }
     }
 
+    @Test
+    public void check_red_team_name() {
+        Assert.assertEquals("Czerwoni", global.getString$_red_team());
+    }
+
+    @Test
+    public void check_blue_team_name() {
+        Assert.assertEquals("Niebiescy", global.getString$_blue_team());
+    }
+
+    @Test
+    public void check_string_first_team_empty() {
+        String message = "At the beginning this should be null";
+        Assert.assertEquals(message, null, global.getString$_first_team());
+    }
+
+    @Test
+    public void check_string_second_team_empty() {
+        String message = "At the beginning this should be null";
+        Assert.assertEquals(message, null, global.getString$_first_team());
+    }
+
     public List<String> changePlayer(List<String> list) {
         String name = list.get(0);
         list.remove(0);
