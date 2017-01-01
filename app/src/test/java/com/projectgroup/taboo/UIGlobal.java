@@ -1,5 +1,7 @@
 package com.projectgroup.taboo;
 
+import android.widget.TextView;
+
 import junit.framework.Assert;
 
 import org.junit.Before;
