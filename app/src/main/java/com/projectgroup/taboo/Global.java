@@ -32,6 +32,36 @@ public class Global {
     private String string$_first_team;
     private String string$_second_team;
 
+
+
+    private int[] points_to_win = new int[] {
+            15, 20, 25, 30, 35, 40, 45, 50
+    };
+
+   private int[] forbidden_words = new int[] {
+           3, 4, 5, 6, 7
+   };
+
+    private int[] points_correct_answer = new int[] {
+            1, 2, 3
+    };
+
+    private int[] points_incorrect_answer = new int[] {
+            -3, -2, -1, 0
+    };
+
+
+
+/*    <string-array name="time_per_player">
+    <item>00:30</item>
+    <item>00:45</item>
+    <item>01:00</item>
+    <item>01:15</item>
+    <item>01:30</item>
+    <item>01:45</item>
+    <item>02:00</item>
+    </string-array>*/
+
     //---------------------------------------------------------------------------
     //------------------------------ METHODS ------------------------------------
     //---------------------------------------------------------------------------
@@ -196,5 +226,21 @@ public class Global {
 
     public void setString$_second_team(String string$_second_team) {
         this.string$_second_team = string$_second_team;
+    }
+
+    public int[] getPoints_incorrect_answer() {
+        return points_incorrect_answer;
+    }
+
+    public int[] getPoints_to_win() {
+        return points_to_win;
+    }
+
+    public int[] getForbidden_words() {
+        return forbidden_words;
+    }
+
+    public int[] getPoints_correct_answer() {
+        return points_correct_answer;
     }
 }

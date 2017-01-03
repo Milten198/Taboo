@@ -15,46 +15,4 @@
     <string name="click_to_change_team">Zmień drużynę</string>
     <string name="click_to_start_game">GRAJ</string>
 
-    <string-array name="points_to_win">
-        <item>15</item>
-        <item>20</item>
-        <item>25</item>
-        <item>30</item>
-        <item>35</item>
-        <item>40</item>
-        <item>45</item>
-        <item>50</item>
-    </string-array>
-
-    <string-array name="time_per_player">
-        <item>00:30</item>
-        <item>00:45</item>
-        <item>01:00</item>
-        <item>01:15</item>
-        <item>01:30</item>
-        <item>01:45</item>
-        <item>02:00</item>
-    </string-array>
-
-    <string-array name="forbidden_words">
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-    </string-array>
-
-    <string-array name="points_correct_answer">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="points_incorrect_answer">
-        <item>-3</item>
-        <item>-2</item>
-        <item>-1</item>
-        <item>0</item>
-    </string-array>
-
 </resources>

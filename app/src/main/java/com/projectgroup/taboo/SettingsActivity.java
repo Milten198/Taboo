@@ -39,7 +39,7 @@ public class SettingsActivity extends Activity {
         spinner$_forbidden_words = (Spinner) findViewById(R.id.spinner$_forbidden_words);
         spinner$_points_correct_answer = (Spinner) findViewById(R.id.spinner$_points_correct_answer);
         spinner$_points_incorrect_answer = (Spinner) findViewById(R.id.spinner$_points_incorrect_answer);
-        createSpinner(spinner$_points_to_win, R.array.points_to_win);
+        createSpinner(spinner$_points_to_win, global.);
         createSpinner(spinner$_time_per_question, R.array.time_per_player);
         createSpinner(spinner$_forbidden_words, R.array.forbidden_words);
         createSpinner(spinner$_points_correct_answer, R.array.points_correct_answer);
