@@ -18,10 +18,11 @@ public class Global {
     For now, default value of points to win is set to 30
     */
     private static boolean play_without_names;
-    private int default$_points_to_win = 30;
-    private int default$_forbidden_words = 5;
-    private int default$_points_correct_answer = 1;
-    private int default$_points_incorrect_answer = -1;
+    private int default$_points_to_win;
+    private int default$_forbidden_words;
+    private int default$_points_correct_answer;
+    private int default$_points_incorrect_answer;
+    private int default$_time_per_player;
     private int max_num_of_players = 6;
     private static List<String> firstTeam;
     private static List<String> secondTeam;
@@ -34,33 +35,25 @@ public class Global {
 
 
 
-    private int[] points_to_win = new int[] {
-            15, 20, 25, 30, 35, 40, 45, 50
+    private String[] array$_points_to_win = new String[] {
+            "15", "20", "25", "30", "35", "40", "45", "50"
     };
 
-   private int[] forbidden_words = new int[] {
-           3, 4, 5, 6, 7
+   private String[] array$_forbidden_words = new String[] {
+           "3", "4", "5", "6", "7"
    };
 
-    private int[] points_correct_answer = new int[] {
-            1, 2, 3
+    private String[] array$_points_correct_answer = new String[] {
+            "1", "2", "3"
     };
 
-    private int[] points_incorrect_answer = new int[] {
-            -3, -2, -1, 0
+    private String[] array$_points_incorrect_answer = new String[] {
+            "-3", "-2", "-1", "0"
     };
 
-
-
-/*    <string-array name="time_per_player">
-    <item>00:30</item>
-    <item>00:45</item>
-    <item>01:00</item>
-    <item>01:15</item>
-    <item>01:30</item>
-    <item>01:45</item>
-    <item>02:00</item>
-    </string-array>*/
+    private String[] array$_time_per_player = new String[] {
+            "30", "45", "60", "75", "90", "105", "120"
+    };
 
     //---------------------------------------------------------------------------
     //------------------------------ METHODS ------------------------------------
@@ -196,6 +189,14 @@ public class Global {
         this.default$_points_incorrect_answer = default$_points_incorrect_answer;
     }
 
+    public int getDefault$_time_per_player() {
+        return default$_time_per_player;
+    }
+
+    public void setDefault$_time_per_player(int default$_time_per_player) {
+        this.default$_time_per_player = default$_time_per_player;
+    }
+
     public static boolean isPlay_without_names() {
         return play_without_names;
     }
@@ -228,19 +229,25 @@ public class Global {
         this.string$_second_team = string$_second_team;
     }
 
-    public int[] getPoints_incorrect_answer() {
-        return points_incorrect_answer;
+    public String[] getArray$_points_to_win() {
+        return array$_points_to_win;
     }
 
-    public int[] getPoints_to_win() {
-        return points_to_win;
+    public String[] getArray$_forbidden_words() {
+        return array$_forbidden_words;
     }
 
-    public int[] getForbidden_words() {
-        return forbidden_words;
+    public String[] getArray$_points_correct_answer() {
+        return array$_points_correct_answer;
     }
 
-    public int[] getPoints_correct_answer() {
-        return points_correct_answer;
+    public String[] getArray$_points_incorrect_answer() {
+        return array$_points_incorrect_answer;
     }
+
+    public String[] getArray$_time_per_player() {
+        return array$_time_per_player;
+    }
+
+
 }
