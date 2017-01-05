@@ -38,13 +38,18 @@ public class TeamNamesActivity extends Activity {
     private String defaultNameForPlayers = "Gracz ";
     private String string$_redTeam = "Czerwoni";
     private String string$_blueTeam = "Niebiescy";
+    private TextView textView$_blue_team;
+    private TextView textView$_red_team;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_names);
         config();
-        handleHittingEnter();
+        setTeamNames();
+        handleHittingEnter(namesBlueTeam);
+        handleHittingEnter(namesRedTeam);
     }
 
     @Override
@@ -66,7 +71,14 @@ public class TeamNamesActivity extends Activity {
         addPlayersRedTeam = (Button) findViewById(R.id.more_players_red_team);
         containerBlueTeam = (LinearLayout) findViewById(R.id.container_blue);
         containerRedTeam = (LinearLayout) findViewById(R.id.container_red);
+        textView$_blue_team = (TextView) findViewById(R.id.blue_team);
+        textView$_red_team = (TextView) findViewById(R.id.red_team);
         global = new Global();
+    }
+
+    public void setTeamNames() {
+        textView$_blue_team.setText(global.getString$_blue_team());
+        textView$_red_team.setText(global.getString$_red_team());
     }
 
     public void addMorePlayers_blueTeam(View view) {
@@ -159,31 +171,19 @@ public class TeamNamesActivity extends Activity {
         deleteLists();
         global.copyListsToGlobal(global.getBlueTeam(), names_blueTeam);
         global.copyListsToGlobal(global.getRedTeam(), names_redTeam);
+        global.setPlay_without_names(false);
         startActivity(beforeStartIntent);
     }
 
     public void goFurtherWithoutNames(View view) {
         Intent beforeStartIntent = new Intent(this, BeforeStartActivity.class);
         deleteLists();
-        global.addValueToList(global.getBlueTeam(), string$_blueTeam);
-        global.addValueToList(global.getRedTeam(), string$_redTeam);
+        global.setPlay_without_names(true);
         startActivity(beforeStartIntent);
     }
 
-    public void handleHittingEnter() {
-        namesBlueTeam.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId,
-                                          KeyEvent event) {
-                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                    createToast("Enter");
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        });
-        namesRedTeam.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+    public void handleHittingEnter(EditText editText) {
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId,
                                           KeyEvent event) {

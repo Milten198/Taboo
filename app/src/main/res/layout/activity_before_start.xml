@@ -9,7 +9,9 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <LinearLayout style="@style/BeforeStart_mainLayout">
+        <LinearLayout
+            android:id="@+id/layout_with_recycler_views"
+            style="@style/BeforeStart_mainLayout">
 
             <LinearLayout style="@style/BeforeStart_teamLayouts">
 
